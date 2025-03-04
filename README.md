@@ -34,8 +34,6 @@ All scripts are placed in `/usr/local/bin/` and must be set as executables to ru
 | `new_file_script`     | Opens a new file. Cannot create directories — this must be done manually in the terminal. |
 | `wifi_hotspot_no_internet` | Activates Microjournal’s Wi-Fi hotspot, launches Dufs (via Docker), starts Syncthing, and resets ownership of uploaded files to avoid root permissions. |
 | `wifi_with_internet`| Connects to external Wi-Fi, then opens Dufs and Syncthing. Also resets file ownership. |
-| `shutdown`     | Shuts down the device (equivalent to `shutdown now`). Not included as it’s part of the original Microjournal. |
-
 ---
 
 💡 Future Plans
