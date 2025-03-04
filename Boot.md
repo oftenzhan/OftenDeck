@@ -25,8 +25,8 @@ The goal is to speed up the boot. **Warning:** Any wrong codes may require you t
 - `gpu_mem=16`  
   Leave only 16MB for GPU memory because I'm not using the GUI.
 
-- `force_turbo=1`  
-  Forces the CPU to always run at its maximum speed.
+~- `force_turbo=1` ~ 
+  Forces the CPU to always run at its maximum speed. (I actually turned this one off because it ate away at battery life.)
 
 ## /boot/cmdline.txt
 
