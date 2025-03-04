@@ -76,3 +76,10 @@ docker run -v /home/microjournal/documents/:/data -p 5000:5000 --rm sigoden/dufs
 
 Ensure that Dufs is configured correctly to suit your needs. To close, type <kbd>ctrl</kbd>+<kbd>c</kbd>.
 
+# Install Emacs
+
+Since there is no gui, just install Emacs (no X).
+
+```
+sudo apt-get install emacs-nox
+```
