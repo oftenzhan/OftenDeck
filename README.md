@@ -2,7 +2,7 @@
 
 ## Microjournal Rev.2.ReVamp Custom ROM
 
-A custom ROM built on RasPi OS Lite for the Microjournal Rev.2.ReVamp.
+A custom settings built on RasPi OS Lite for the Microjournal Rev.2.ReVamp.
 
 The goal of this project is to work on the software side of building a writerdeck using Raspberry Pi OS Lite (for now) and Raspberry Pi Zero 2w. The goal is fast boot times, custom navigation, seamless file sharing, and a tailored writing environment.
 
