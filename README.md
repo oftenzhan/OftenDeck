@@ -11,7 +11,7 @@ The goal of this project is to work on the software side of building a writerdec
 ## 🚀 Features
 
 - **Faster Boot Time:** Fast boot time by disabling unused features. (Bluetooth, Audio Drivers, etc.)
-- **Custom Navigation Menu:** Built with `whiptail` (used by `raspi-config`), featuring its own file navigation for opening and creating documents.
+- **Custom Navigation Menu:** Built with `whiptail` (also used by `raspi-config`), featuring its own file navigation for opening and creating documents.
 - **Integrated File Management:**
   - **Automatic Backup:** Files sync to your phone via Syncthing whenever Wi-Fi (hotspot or external) connects.
   - **Wireless File Access:** Edit, upload, and download files using Dufs — a lightweight, clean file manager.
