@@ -22,8 +22,9 @@ or (less ideal):
 sudo apt update
 sudo apt install docker.io
 ```
+I didn't install using apt. If you install using apt, the steps below might not be necessary. If it isn't, jump to Step 6.
 
-3. Add Your User to the Docker Group:
+03. Add Your User to the Docker Group:
 
 To manage Docker as a non-root user, add your user to the Docker group:
 
