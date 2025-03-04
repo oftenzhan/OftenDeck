@@ -4,6 +4,8 @@
 
 A custom settings built on RasPi OS Lite for the Microjournal Rev.2.ReVamp.
 
+**The image if my sd card is not uploaded yet. I need to remove some personal files first.**
+
 The goal of this project is to work on the software side of building a writerdeck using Raspberry Pi OS Lite (for now) and Raspberry Pi Zero 2w. The goal is fast boot times, custom navigation, seamless file sharing, and a tailored writing environment.
 
 ---
