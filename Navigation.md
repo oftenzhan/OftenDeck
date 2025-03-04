@@ -310,4 +310,32 @@ done
 ## wifi_with_internet
 
 ```
+#!/bin/bash
+
+# Function to run when Ctrl + C (SIGINT) is detected
+cleanup() {
+    echo "Disabling NetworkManager.service..."
+    sudo systemctl stop NetworkManager.service
+    echo "NetworkManager.service disabled."
+    echo "Changing documents ownership from root to microjournal"
+    sudo chown -R microjournal:microjournal /home/microjournal/documents/
+    exit 0
+}
+
+# Trap Ctrl + C (SIGINT) and call the cleanup function
+trap cleanup SIGINT
+sudo systemctl start NetworkManager.service
+sleep 5
+echo "########################################"
+echo "usr: microjournal pwd: microjournal"
+echo "Open http://$(hostname -I | awk '{print $1}'):5000 for Dufs file browsing"
+echo "Open http://$(hostname -I | awk '{print $1}'):8384 for Syncthing settings"
+echo "Ctrl + C to exit"
+echo "########################################"
+syncthing > /dev/null 2>&1 &
+docker run -v /home/microjournal/documents:/data -p 5000:5000 --rm sigoden/dufs /data -A > /dev/null 2>&1
+# Wait indefinitely until Ctrl + C is pressed
+while true; do
+    sleep 1
+done
 ```
