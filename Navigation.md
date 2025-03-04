@@ -135,16 +135,176 @@ show_menu
 ## open_file_script
 
 ```
+#!/bin/bash
+
+# Set the starting directory
+base_directory="/home/microjournal/documents/"
+
+# Get terminal dimensions
+height=$(tput lines)
+width=$(tput cols)
+
+# Get the list of subdirectories
+folders=($(ls -d "$base_directory"*/ | sed "s|$base_directory||" | sed 's|/||'))
+
+# Make sure there are folders to choose from
+if [ ${#folders[@]} -eq 0 ]; then
+    whiptail --msgbox "No folders found in $base_directory" $height $width
+    exit 1
+fi
+
+# Turn folder list into whiptail menu options
+folder_options=()
+for folder in "${folders[@]}"; do
+    folder_options+=("$folder" "")
+done
+
+# Let the user choose a subdirectory with full screen
+subdirectory=$(whiptail --title "Choose a folder" --menu "Available folders in $base_directory:" $height $width ${#folders[@]} "${folder_options[@]}" 3>&1 1>&2 2>&3)
+
+# If user cancels, exit
+if [ -z "$subdirectory" ]; then
+    exit 1
+fi
+
+# Construct the full directory path
+directory="$base_directory$subdirectory"
+
+# Ask for the file name, fully fullscreen
+filename=$(whiptail --inputbox "Enter the name of the file (e.g., file.txt):" $height $width 3>&1 1>&2 2>&3)
+
+# If user cancels or leaves filename blank, exit
+if [ -z "$filename" ]; then
+    exit 1
+fi
+
+# Construct the full file path
+filepath="$directory/$filename"
+
+# Confirm and open in Emacs, fully fullscreen
+if whiptail --yesno "Open $filepath in Emacs?" $height $width; then
+    emacs "$filepath"
+else
+    whiptail --msgbox "Operation cancelled." $height $width
+fi
 ```
 
 ## new_file_script
 
 ```
+#!/bin/bash
+
+startdir="/home/microjournal/documents"
+filext='md|txt|org'  # Multiple file extensions separated by |
+menutitle="File Selection Menu"
+
+#------------------------------------------------------------------------------
+function Filebrowser()
+{
+    # Get current terminal size
+    HEIGHT=$(tput lines)
+    WIDTH=$(tput cols)
+
+    # No padding, use the full terminal dimensions
+    ((HEIGHT=HEIGHT))
+    ((WIDTH=WIDTH))
+
+    if [ -z $2 ] ; then
+        dir_list=$(ls -lhp | awk -F ' ' '{ print $9 " " $5 }')
+    else
+        cd "$2"
+        dir_list=$(ls -lhp | awk -F ' ' '{ print $9 " " $5 }')
+    fi
+
+    curdir=$(pwd)
+    if [ "$curdir" == "/" ] ; then  # Check if you are at root folder
+        selection=$(whiptail --title "$1" \
+                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" $HEIGHT $WIDTH 0 \
+                              --cancel-button Cancel \
+                              --ok-button Select $dir_list 3>&1 1>&2 2>&3)
+    else   # Not Root Dir so show ../ BACK Selection in Menu
+        selection=$(whiptail --title "$1" \
+                              --menu "PgUp/PgDn/Arrow Enter Selects File/Folder\nor Tab Key\n$curdir" $HEIGHT $WIDTH 0 \
+                              --cancel-button Cancel \
+                              --ok-button Select ../ BACK $dir_list 3>&1 1>&2 2>&3)
+    fi
+
+    RET=$?
+    if [ $RET -eq 1 ]; then  # Check if User Selected Cancel
+       return 1
+    elif [ $RET -eq 0 ]; then
+       if [[ -d "$selection" ]]; then  # Check if Directory Selected
+          Filebrowser "$1" "$selection"
+       elif [[ -f "$selection" ]]; then  # Check if File Selected
+          if [[ $selection =~ \.($filext)$ ]]; then   # Check if selected file matches allowed extensions
+            if (whiptail --title "Confirm Selection" --yesno "DirPath : $curdir\nFileName: $selection" $HEIGHT $WIDTH \
+                         --yes-button "Confirm" \
+                         --no-button "Retry"); then
+                filename="$selection"
+                filepath="$curdir"    # Return full filepath and filename as selection variables
+            else
+                Filebrowser "$1" "$curdir"
+            fi
+          else   # Not correct extension so Inform User and restart
+             whiptail --title "ERROR: Invalid File Extension" \
+                      --msgbox "$selection\nYou Must Select a file with one of the following extensions: $filext" $HEIGHT $WIDTH
+             Filebrowser "$1" "$curdir"
+          fi
+      else
+          # Could not detect a file or folder so Try Again
+          whiptail --title "ERROR: Selection Error" \
+                   --msgbox "Error Changing to Path $selection" $HEIGHT $WIDTH
+          Filebrowser "$1" "$curdir"
+       fi
+    fi
+}
+
+Filebrowser "$menutitle" "$startdir"
+
+exitstatus=$?
+if [ $exitstatus -eq 0 ]; then
+    if [ "$selection" == "" ]; then
+        echo "User Pressed Esc with No File Selection"
+    else
+	emacs $filepath/$filename
+    fi
+else
+    echo "User Pressed Cancel with No File Selected."
+fi
 ```
 
 ## wifi_hotspot_no_internet
 
 ```
+#!/bin/bash
+
+# Function to run when Ctrl + C (SIGINT) is detected
+cleanup() {
+    echo "Disabling NetworkManager.service..."
+    sudo systemctl stop NetworkManager.service
+    echo "NetworkManager.service disabled."
+    echo "Changing documents ownership from root to microjournal"
+    sudo chown -R microjournal:microjournal /home/microjournal/documents/
+    exit 0
+}
+
+# Trap Ctrl + C (SIGINT) and call the cleanup function
+trap cleanup SIGINT
+sudo systemctl start NetworkManager.service
+sleep 5
+sudo nmcli device wifi hotspot ssid microjournal password microjournal ifname wlan0
+echo "########################################"
+echo "usr: microjournal pwd: microjournal"
+echo "Open http://$(hostname -I | awk '{print $1}'):5000 for Dufs file browsing"
+echo "Open http://$(hostname -I | awk '{print $1}'):8384 for Syncthing settings"
+echo "Ctrl + C to exit"
+echo "########################################"
+syncthing > /dev/null 2>&1 &
+docker run -v /home/microjournal/documents:/data -p 5000:5000 --rm sigoden/dufs /data -A > /dev/null 2>&1
+# Wait indefinitely until Ctrl + C is pressed
+while true; do
+    sleep 1
+done
 ```
 
 ## wifi_with_internet
