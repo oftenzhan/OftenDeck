@@ -133,7 +133,7 @@ show_menu
 ```
 
 ## open_file_script
-Built using https://github.com/pageauc/FileBrowser
+Built using [FileBrowser](https://github.com/pageauc/FileBrowser)
 with minor alterations.
 
 ```
