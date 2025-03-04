@@ -39,10 +39,12 @@ All scripts are placed in `/usr/local/bin/` and must be set as executables to ru
 💡 Future Plans
 
 - Further reduce Emacs load time.
+- Clean up code
 - Share .img file of this build for easy replication.
 - Explore additional customization and optimization options.
    - toggle system functions
 - Bluetooth music
+- Speech to Text using Cheetah?
 ---
 
 🖤 Special Thanks
