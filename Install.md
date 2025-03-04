@@ -16,7 +16,7 @@ Run the following command to install Docker using the official installation scri
 ```
 curl -sSL https://get.docker.com | sh
 ```
-or (less ideal)
+or (less ideal):
 
 ```
 sudo apt update
