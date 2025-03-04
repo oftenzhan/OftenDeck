@@ -14,7 +14,7 @@ Below is my `init.el` file.
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
 
-;; Disabled ' Suspend' because sometimes the microjournal freezes.
+;; Disabled ' Suspend' because sometimes the microjournal freezes when using it.
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-x C-z"))
 
