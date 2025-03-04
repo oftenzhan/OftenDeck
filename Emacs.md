@@ -2,7 +2,7 @@
 
 I am using Emacs. I changed the knobs in Vial the buttons on the left and right knobs to toggle buffers and screen switchings.
 
-The splitscreen is made specifically for my font size which is `utf-8 | Terminis Bold | 12x24`.
+The splitscreen dimensions are made specifically for the font size `utf-8 | Terminis Bold | 12x24`.
 
 Below is my `init.el` file.
 
