@@ -67,5 +67,5 @@ Use Docker to run Dufs, a file-sharing application, by executing:
 docker run -v /home/microjournal/documents/:/data -p 5000:5000 --rm sigoden/dufs /data -A
 ```
 
-Ensure that Dufs is configured correctly to suit your needs. To close, type <kbd>trl</kbd>+<kbd>c</kbd>.
+Ensure that Dufs is configured correctly to suit your needs. To close, type <kbd>ctrl</kbd>+<kbd>c</kbd>.
 
