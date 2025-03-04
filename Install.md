@@ -104,7 +104,7 @@ Open the Syncthing configuration file:
 nano ~/.config/syncthing/config.xml
 ```
 
-Locate the <gui> section and change the <address> to 0.0.0.0:8384:
+Locate the <gui> section and change the <address> to `0.0.0.0:8384`:
 
 ```
 <gui enabled="true" tls="false">
@@ -112,4 +112,4 @@ Locate the <gui> section and change the <address> to 0.0.0.0:8384:
     ...
 </gui>
 ```
-Save and close the file (press Ctrl+X, then Y, and Enter).
+Save and close the file (press <kbd>Ctrl+X</kbd>, then <kbd>Y</kbd>, and Enter).
