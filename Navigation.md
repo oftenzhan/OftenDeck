@@ -9,3 +9,28 @@ There are several files:
 | `new_file_script`     | Opens a new file. Cannot create directories — this must be done manually in the terminal. |
 | `wifi_hotspot_no_internet` | Activates Microjournal’s Wi-Fi hotspot, launches Dufs (via Docker), starts Syncthing, and resets ownership of uploaded files to avoid root permissions. |
 | `wifi_with_internet`| Connects to external Wi-Fi, then opens Dufs and Syncthing. Also resets file ownership. |
+## navscreen
+
+```
+
+```
+
+## open_file_script
+
+```
+```
+
+## new_file_script
+
+```
+```
+
+## wifi_hotspot_no_internet
+
+```
+```
+
+## wifi_with_internet
+
+```
+```
