@@ -1,5 +1,5 @@
 # Introduction
-The custom Navigation uses `whiptail`. Whiptail is already installed in Rasberry Pi OS Lite. I put them all these files in `/usr/local/bin/` so I can run it anywhere in terminal. Of course, they have to be set as executables. Reminder, this uses Emacs and Dufs to open files. If Emacs and Dufs are not installed, these files won't work.
+The custom Navigation uses `whiptail`. Whiptail is already installed in Rasberry Pi OS Lite. I put them all these files in `/usr/local/bin/` so I can run it anywhere in terminal. Of course, they have to be set as executables. Reminder, this uses `Emacs` and `Dufs` to open files. If Emacs and Dufs are not installed, these files won't work.
 
 There are several files:
 | File           | Description                                                                 |
