@@ -16,6 +16,12 @@ Run the following command to install Docker using the official installation scri
 ```
 curl -sSL https://get.docker.com | sh
 ```
+or (less ideal)
+
+```
+sudo apt update
+sudo apt install docker.io
+```
 
 3. Add Your User to the Docker Group:
 
