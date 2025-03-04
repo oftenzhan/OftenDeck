@@ -83,3 +83,33 @@ Since there is no gui, just install Emacs (no X).
 ```
 sudo apt-get install emacs-nox
 ```
+
+# Install Syncthing
+
+To install Syncthing on your Raspberry Pi and configure it for Wi-Fi access, follow these steps:
+
+1. Install Syncthing:
+
+```
+sudo apt install syncthing
+```
+
+2. Configure Syncthing for Wi-Fi Access:
+
+By default, Syncthing's web GUI is accessible only from the Raspberry Pi itself. To allow access over Wi-Fi, modify the GUI's listen address.
+
+Open the Syncthing configuration file:
+
+```
+nano ~/.config/syncthing/config.xml
+```
+
+Locate the <gui> section and change the <address> to 0.0.0.0:8384:
+
+```
+<gui enabled="true" tls="false">
+    <address>0.0.0.0:8384</address>
+    ...
+</gui>
+```
+Save and close the file (press Ctrl+X, then Y, and Enter).
