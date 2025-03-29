@@ -2,11 +2,10 @@
 
 1. Update Package Lists and Upgrade Installed Packages:
 
-Open your terminal and execute the following commands to update the package lists and upgrade all installed packages:
+Open your terminal and execute the following command to update the package lists and upgrade all installed packages:
 
 ```
-sudo apt update
-sudo apt upgrade
+sudo apt update -y && sudo apt upgrade -y
 ```
 
 2. Install Docker:
