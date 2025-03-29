@@ -28,7 +28,7 @@ The goal is to speed up the boot. **Warning:** Any wrong codes may require you t
 - <del>`force_turbo=1`</del>
   Forces the CPU to always run at its maximum speed. (I actually turned this one off because it ate away at battery life.)
 
-## /boot/cmdline.txt
+## /boot/firmware/cmdline.txt
 
 - `loglevel=1 quiet`  
   Quiet removes the output entirely. If quiet is removed, the terminal only shows critical and emergency notifications.
