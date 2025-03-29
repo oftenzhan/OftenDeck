@@ -6,6 +6,9 @@ The splitscreen dimensions are made specifically for the font size:
 
 `utf-8 | Terminis Bold | 12x24`
 
+You can edit the console font by typing into the terminal:
+`sudo dpkg-reconfigure console-setup`
+
 Below is my `init.el` file.
 
 ```
