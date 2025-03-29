@@ -2,7 +2,7 @@
 
 The goal is to speed up the boot. **Warning:** Any wrong codes may require you to plug this back into your home computer and edit the SD card to properly boot. Be careful. Look at other websites to double-check that I gave you the right codes.
 
-## /boot/config.txt
+## /boot/firmware/config.txt
 
 - `disable_splash=1`  
   This removes the rainbow screen shown by the GPU bootloader.
