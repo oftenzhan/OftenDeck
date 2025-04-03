@@ -19,34 +19,26 @@ Install the latest version of Hugo:
 
 3. Fix ld.so error
 
-There is an error that pops up with the ld.so preload error because the libarmmem.so file was preloaded, causing issues. This file is unnecessary (I think because it is for 64-bit instead of 32-bit OS.)To fix it, you commented out the line in /etc/ld.so.preload by adding a # to disable it:
+There is an error that pops up with the ld.so preload error because the libarmmem.so file was preloaded, causing an error message. This file is unnecessary for running Hugo. (I think the error is because my RasPi OS is 32-bit OS instead of 64-bit.) To fix it, the line in /etc/ld.so.preload is commented out thereby disabling it:
 
-sudo nano /etc/ld.so.preload
+> sudo nano /etc/ld.so.preload
 
-Then, comment out the line:
+Then, comment out the line by adding a hashtag in the beginning.
 
-#/usr/lib/arm-linux-gnueabihf/libarmmem.so
+> #/usr/lib/arm-linux-gnueabihf/libarmmem.so
 
-
-
-
----
-
-Step 2: Set Up Hugo with the Book Theme
+Step 2: Setting up a Hugo theme
 
 1. Create a New Hugo Site:
 
 Navigate to the directory where you want to create your blog:
 
+```
 cd ~
-mkdir my-hugo-blog
-cd my-hugo-blog
-
-Create a new Hugo site:
-
-hugo new site .
-
-
+mkdir oftenblog
+hugo new site ~/oftenblog
+cd oftenblog
+```
 
 2. Clone the Hugo Book Theme:
 
