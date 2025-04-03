@@ -9,25 +9,25 @@ For blogging, we used Emacs Projects function with Hugo.
 
 Do not install Hugo via `atp` because the file is too old and not all themes will run.
 
-> sudo apt-get install snapd
+```sudo apt-get install snapd```
 
 2. Install Hugo using Snap:
 
 Install the latest version of Hugo:
 
-> sudo snap install hugo --classic
+```sudo snap install hugo --classic```
 
 3. Fix ld.so error
 
 There is an error that pops up with the ld.so preload error because the libarmmem.so file was preloaded, causing an error message. This file is unnecessary for running Hugo. (I think the error is because my RasPi OS is 32-bit OS instead of 64-bit.) To fix it, the line in /etc/ld.so.preload is commented out thereby disabling it:
 
-> sudo nano /etc/ld.so.preload
+```sudo nano /etc/ld.so.preload```
 
 Then, comment out the line by adding a hashtag in the beginning.
 
-> #/usr/lib/arm-linux-gnueabihf/libarmmem.so
+``` #/usr/lib/arm-linux-gnueabihf/libarmmem.so```
 
-Step 2: Setting up a Hugo theme
+## Step 2: Setting up a Hugo theme
 
 1. Create a New Hugo Site:
 
@@ -40,32 +40,29 @@ hugo new site ~/oftenblog
 cd oftenblog
 ```
 
-2. Clone the Hugo Book Theme:
+2. Clone the Hugo theme:
 
-Use Git to clone the Hugo Book theme:
+In this case, I am using the theme `Book`. Use Git to clone the Hugo Book theme:
 
+
+```
 git clone https://github.com/alexandrevicenzi/hugo-book.git themes/hugo-book
-
-
+```
 
 3. Configure Your Site:
 
 Open the config.toml file:
 
-nano config.toml
+```nano config.toml```
 
 Replace the contents with the following basic configuration:
 
+```
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My Hugo Blog"
 theme = "hugo-book"
-
-
-
-
-
----
+```
 
 Step 3: Create Blog Posts
 
