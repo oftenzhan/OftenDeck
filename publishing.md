@@ -99,7 +99,7 @@ Edit the front-matter and content to your liking.
 
 ## Step 4: Preview Your Site Locally
 
-2. Run the Hugo Development Server:
+1. Run the Hugo Development Server:
 
 To determine your IP address: 
 
