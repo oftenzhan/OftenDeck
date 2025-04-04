@@ -1,4 +1,4 @@
-The following is a list of videos that talk about using `Emacs` as writing tools:
+The following is a list of videos and websites that discuss about using `Emacs` as writing tools:
 - https://vimvalley.com/replacing-scrivener-with-emacs-and-vim/
 - https://lucidmanager.org/tags/emacs/
 - https://alphapapa.github.io/org-almanac/#Writing
