@@ -90,7 +90,7 @@ Much of my distress come from the small screensize of my MicroJournal. Since my 
 (advice-add 'split-window :override #'my-force-vertical-split)
 ```
 
-***EDIT**: Hilarious. It works. This is the power of writing out your thoughts. This must be the sketchiest Emacs configuration I have ever made. I essentially said, make all horizontal screen splits into vertical screen splits. I know that this will break something down the line, but it works elegantly for now.*
+***EDIT**: Hilarious. It works. (I have to fiddle with the code because it gives a recursive error. But it's a step forward. This is the power of writing out your thoughts. This must be the sketchiest Emacs configuration I have ever made. I essentially said, make all horizontal screen splits into vertical screen splits. I know that this will break something down the line, but it works elegantly for now.*
 
 ### Slowly but Surely
 
