@@ -1,4 +1,4 @@
-## The OftenDeck Update
+## The OftenDeck Update 01
 
 My adventures with adjusting and modifying my writerdeck (using a Raspberry Pi Zero 2W) has been a frustratingly fun process. Here is my progress and thoughts so far.
 
