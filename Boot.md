@@ -2,6 +2,8 @@
 
 The goal is to speed up the boot. **Warning:** Any wrong codes may require you to plug this back into your home computer and edit the SD card to properly boot. Be careful. Look at other websites to double-check that I gave you the right codes.
 
+UPDATE (04.04.25): I decided to leave all of the Systemcrl settings on for now. This is because I'm doing a lot of troubleshooting and trying out different programs. Internet constantly turn on and off as I'm testing out programs, trying out Bluetooth, 
+
 ## /boot/firmware/config.txt
 
 - `disable_splash=1`  
