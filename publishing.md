@@ -277,3 +277,5 @@ Now, when you're editing any markdown file (.md)—like blog posts—you can pre
 
 `C-c C-d`
 to deploy directly from Emacs.
+
+# LaTeX
