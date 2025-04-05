@@ -1,5 +1,4 @@
-
-I decided to do everything through Emacs. So now these navigation scripts are deprecated. I'll leave it up because I intend to use it for TUI `ncurses` someday. These scripts will not be included in my image files.
+I decided that all navigation will be done through Emacs. So now these navigation scripts are deprecated. I'll create a settings script to sync and change configurations.
 
 # 🗂 File Structure
 
