@@ -17,3 +17,13 @@
    - Markdown
    - LaTeX
 - printing
+
+4. video tutorial #4: Data Collecting and Brain Storm
+
+- org-capture: note-taking
+- YAsnippets: inline templates
+
+5. video tutorial #5: Editing
+
+- Spellcheck
+- 
