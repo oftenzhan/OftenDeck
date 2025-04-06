@@ -6,7 +6,13 @@ This is a step by step installation guide from scratch.
 
 I etch Raspberry Pi OS Lite 32-bit onto an SD card. The version I am using is `2024-11-19*`. I chose lite because I don't want a full desktop environment; 32-bit was chosen because it uses less RAM.
 
-I used the `Disks` utility on Linux Mint Mate, but you should etch it using the software for your OS. Before closing, you need to go to `/boot/cmdline.txt` and add the following to the beginning:
+I used the `Disks` utility on Linux Mint Mate, but you should etch it using the software for your OS. 
+
+There are several things that are important to do before we unmount the microsd card and put it into the MicroJournal. First (optional), we will create a new partition for backup as explained in Step 2. Second, we will rotate the monitor.
+
+We need to rotate the monitor. 
+
+Before closing, you need to go to `/boot/cmdline.txt` and add the following to the beginning:
 
 ```sh
 video=HDMI-A-1:400x1280M@60,rotate=90 
