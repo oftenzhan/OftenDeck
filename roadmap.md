@@ -23,7 +23,13 @@
 - org-capture: note-taking
 - YAsnippets: inline templates
 
-5. video tutorial #5: Editing
+5. video tutorial #5: Revise and Editing
 
 - Spellcheck
-- 
+- Name block replacement
+- highlight certain words
+
+6.video tutorial #6: First Draft
+
+- word count
+
