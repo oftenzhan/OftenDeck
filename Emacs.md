@@ -48,4 +48,28 @@ Below is my `init.el` file.
 
 
 # Installing `fbterm`
-# Installing `fbgs`
+To leverage the limits of a non-X11 system, we will run the terminal through a "frame buffer". This allows us to do several things:
+- Open up different fonts
+- Expand colors to from 8 in TTY to 256 in Framebuffer.
+- Allows PDF preview before printing
+- Allows image preview.
+
+```sh
+sudo apt install framebuffer
+```
+
+```sh
+nano ~/.fbtermrc
+```
+
+Edit the line 
+
+`rotate=3`
+
+# Installing `fbi`
+
+To be able to preview PDF and view images, install FBGS.
+
+```sh
+sudo apt install fbi
+```
