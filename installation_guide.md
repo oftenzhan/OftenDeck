@@ -14,14 +14,6 @@ video=HDMI-A-1:400x1280M@60,rotate=90
 
 When you first boot up the OS, there will be some gooblygook. Then it will restart and boot. Then it will go through configuration. First for Keyboard. I chose English (US). My username and password is `oftendeck`. I will use that for file configurations from now on. Change it to your own if you used a different username and password.
 
-Because of the small text, I adjusted the font of TTY. For some reason the raspi-config gets cut off with TTY large text. I will enlarge it even bigger once I am done with setting up the internet.
-
-```sh
-sudo dpkg-reconfigure console-setup
-```
-
-I set my font larger to utf-8, guess optimal, Terminal Bold, 12x24.
-
 Then, I edited some of the configurations:
 
 ```sh
