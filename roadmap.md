@@ -4,11 +4,12 @@
 - switching buffers and screens
 - copy and paste
 
-2. video tutorial #2: Remote File Operations
+2. video tutorial #2: Remote File Operations and Backup
 
 - uploading/downloading files using Dufs
 - syncing using syncthing
 - WIFI-AP
+- Backup
 
 3. video tutorial #3: Publishing
 
@@ -24,8 +25,7 @@
 - YAsnippets: inline templates
 - daily journal
 
-5. video tutorial #5: Reflections #1
-
+5. video tutorial #5: Reflections Part 1
 
 6. video tutorial #6: Revise and Editing
 
@@ -33,18 +33,33 @@
 - Name block replacement
 - highlight certain words
 
-6.video tutorial #7: First Draft
+7.video tutorial #7: First Draft
 
 - word count
 
-7. 
-
 8. video tutorial #8
+
+- Online Resources
 
 9. video tutorial #9: Optimization and Battery
 
 - battery saving mode (by default, internet and other functions are on)
 - boot speed fixes
+
+10. video tutorial #10: Reflections Part 2
+
+11. video tutorial #11: Philosophy of OftenDeck
+
+12. video tutorial #12: Peripherals
+
+- Bluetooth
+   - mouse
+   - headphones
+   - music
+
+
+
+
 
 
 
