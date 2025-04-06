@@ -45,3 +45,7 @@ Below is my `init.el` file.
 (other-window -1)
 (split-window-horizontally 57)
 ```
+
+
+# Installing `fbterm`
+# Installing `fbgs`
