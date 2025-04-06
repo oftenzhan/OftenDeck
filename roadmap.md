@@ -22,14 +22,29 @@
 
 - org-capture: note-taking
 - YAsnippets: inline templates
+- daily journal
 
-5. video tutorial #5: Revise and Editing
+5. video tutorial #5: Reflections #1
+
+
+6. video tutorial #6: Revise and Editing
 
 - Spellcheck
 - Name block replacement
 - highlight certain words
 
-6.video tutorial #6: First Draft
+6.video tutorial #7: First Draft
 
 - word count
+
+7. 
+
+8. video tutorial #8
+
+9. video tutorial #9: Optimization and Battery
+
+- battery saving mode (by default, internet and other functions are on)
+- boot speed fixes
+
+
 
