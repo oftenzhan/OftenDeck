@@ -173,7 +173,7 @@ $ sudo image-backup
 
 Image file to create? /mnt/Backup/oftendeck_backup.img
 
-Initial image file ROOT filesystem size (MB) [2317]? 2400
+Initial image file ROOT filesystem size (MB) [3007]? 3500
 
 Added space for incremental updates after shrinking (MB) [0]? 200
 
