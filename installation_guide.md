@@ -207,6 +207,8 @@ To install Syncthing on your Raspberry Pi and configure it for Wi-Fi access, fol
 sudo apt install syncthing
 ```
 
+Run syncthing to make it generate a `.config.xml` file. Once it is fully loaded (it takes less than a minute) close it by typing: `C-c`.
+
 2. Configure Syncthing for Wi-Fi Access:
 
 By default, Syncthing's web GUI is accessible only from the Raspberry Pi itself. To allow access over Wi-Fi, modify the GUI's listen address.
@@ -222,7 +224,5 @@ Locate the <gui> section and change the <address> to `0.0.0.0:8384`:
 ```
 <gui enabled="true" tls="false">
     <address>0.0.0.0:8384</address>
-    ...
-</gui>
 ```
 Save and close the file (press <kbd>Ctrl+X</kbd>, then <kbd>Y</kbd>, and Enter).
