@@ -156,3 +156,31 @@ $ cd && pwd
 /home/pi
 $ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
 ```
+
+Staging & Usage
+Once you've cloned the image-utils files to your local git repo, you'll likely find they are much easier to use by following the very simple install procedure below. Assuming that /usr/local/sbin is in your PATH, using this install procedure makes the utilities easier to use from the command line, or (for example) in a cron job. Here's how to install:
+
+$ cd
+$ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
+Creating vs. Updating .img backups
+Refer to the Image File Utilities thread of the Raspberry Pi Forums site for documentation & support. The following is offered only as an illustration/example:
+
+Create the .img backup:
+To create a NEW image backup, use the sudo image-backup command; you will be prompted for inputs. The ones I typically use are shown below - immediately following the question mark ?:
+
+$ sudo image-backup
+
+Image file to create? /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img
+
+Initial image file ROOT filesystem size (MB) [2317]? 2400
+
+Added space for incremental updates after shrinking (MB) [0]? 200
+
+Create /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img (y/n)?y
+This will take a few minutes depending on your model Pi, the size of your file system & other variables. Upon completion, you should find the image file you specified in the location specified in your answer to the first prompt/question above. This image file contains everything exactly as it was in your file system at the time of the backup. This image file may be written to an SD card, or mount-ed as another file system on your RPi (you can use the image-mount utility for this).
+
+Update an existing .img backup:
+To update the image file you have created is even easier; sudo image-backup <IMG_TO_UPDT>, or:
+
+$ sudo image-backup /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img
+In other words, simply add the URL of the .img file you wish to update to the basic sudo image-backup command.
