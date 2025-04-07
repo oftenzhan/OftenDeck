@@ -189,11 +189,40 @@ Updating the image file is even easier:
 $ sudo image-backup /mnt/Backup/oftendeck_backup.img
 ```
 
-# Install Files
+# Install Emacs
 
-There are several files that are installed using `apt`. I will install several at once.
+Since there is no gui, just install Emacs (no X). Since we also will eventually want spellcheck (hunspell), I've included an installation of that too.
 
-```sh
-sudo install emacs-nox hunspell-en-us syncthing
+```
+sudo apt-get install emacs-nox hunspell-en-us
 ```
 
+# Install Syncthing
+
+To install Syncthing on your Raspberry Pi and configure it for Wi-Fi access, follow these steps:
+
+1. Install Syncthing:
+
+```
+sudo apt install syncthing
+```
+
+2. Configure Syncthing for Wi-Fi Access:
+
+By default, Syncthing's web GUI is accessible only from the Raspberry Pi itself. To allow access over Wi-Fi, modify the GUI's listen address.
+
+Open the Syncthing configuration file:
+
+```
+nano ~/.config/syncthing/config.xml
+```
+
+Locate the <gui> section and change the <address> to `0.0.0.0:8384`:
+
+```
+<gui enabled="true" tls="false">
+    <address>0.0.0.0:8384</address>
+    ...
+</gui>
+```
+Save and close the file (press <kbd>Ctrl+X</kbd>, then <kbd>Y</kbd>, and Enter).
