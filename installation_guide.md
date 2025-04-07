@@ -102,7 +102,7 @@ First, search for the PARTUUID number.
 sudo blkid
 ```
 
-Mine was `1eb5dcad-03`. It was sequential.
+Mine was `1eb5dcad-03`. The file naming was sequential. where the three partitions were `-01`, `-02`, and `-03`.
 
 Open the fstab file in a text editor:
 
