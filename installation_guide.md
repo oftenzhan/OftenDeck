@@ -63,10 +63,8 @@ This makes it easier to upload scripts.
 Clone the Repository
 
 ```sh
-$ sudo apt update && sudo apt upgrade -y && sudo apt auto remove -y
-$ sudo apt update
-$ sudo apt upgrade
-$ sudo apt install git
+$ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+$ sudo apt install git -y
 $ cd && pwd
 /home/pi
 $ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
