@@ -60,6 +60,12 @@ I can make bootable images to share to you on GitHub
 ## Step 3: Install Dufs
 This makes it easier to upload scripts.
 
+### Make a Backup partition
+
+First you need to make a backup partition. I made mine 20gb. It probably doesn't have to be that big, but I am saving different iterations as I create the MicroDeck. Ideally, you would connect to an external usb stick or a network drive. 
+
+The MicroJournal Rev. 2 ReVamp does not have any way to connect external peripherals, a usb-stick is a no-go. We will have network syncs later, but this approach keeps everything self-contained.
+
 Clone the Repository
 
 ```sh
