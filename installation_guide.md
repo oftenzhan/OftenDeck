@@ -62,9 +62,67 @@ This makes it easier to upload scripts.
 
 ### Make a Backup partition
 
-First you need to make a backup partition. I made mine 20gb. It probably doesn't have to be that big, but I am saving different iterations as I create the MicroDeck. Ideally, you would connect to an external usb stick or a network drive. 
+First you need to make a backup partition. I made mine 20gb ext4. It probably doesn't have to be that big, but I am saving different iterations as I create the MicroDeck. Ideally, you would connect to an external usb stick or a network drive. 
 
-The MicroJournal Rev. 2 ReVamp does not have any way to connect external peripherals, a usb-stick is a no-go. We will have network syncs later, but this approach keeps everything self-contained.
+The MicroJournal Rev. 2 ReVamp does not have any way to connect external peripherals,so a usb-stick is a no-go. We will have network syncs later, but this approach keeps everything self-contained.
+
+To mount your ext4 partition on /mnt/Backup and ensure it auto-mounts at boot, follow these steps:
+
+1. Identify the Partition
+Use the lsblk or blkid command to identify your partition (assuming it's something like /dev/sda1 or /dev/mmcblk0p1).
+
+```sh
+lsblk
+```
+
+The partition name should be...
+
+
+2. Create the Mount Point
+Ensure the mount point /mnt/Backup exists. If not, create it with the following command:
+
+```
+sudo mkdir -p /mnt/Backup
+```
+
+3. Mount the Partition Temporarily
+To mount the partition immediately (replace /dev/sda1 with your actual partition):
+
+```
+sudo mount /dev/sda1 /mnt/Backup
+```
+
+
+4. Edit fstab for Auto-Mount
+To ensure the partition auto-mounts at boot, you need to add it to the /etc/fstab file.
+
+Open the fstab file in a text editor:
+
+```
+sudo nano /etc/fstab
+```
+
+Add a new line at the end of the file for your partition, using the correct partition name and mount point. For example:
+
+```
+/dev/sda1    /mnt/Backup    ext4    defaults    0    2
+```
+
+5. Test the Configuration
+Test the changes by unmounting and remounting based on fstab:
+
+```
+sudo umount /mnt/Backup
+sudo mount -a
+```
+
+Check if the partition is mounted:
+
+```
+df -h
+```
+
+### Install `image-utils`
 
 Clone the Repository
 
