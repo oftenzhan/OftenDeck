@@ -341,7 +341,7 @@ body {
 }
 ```
 
-All the assets should be put in the assets folder and link it to Dufs by typing in terminal:
+All the assets should be put in the assets folder and link it when running Dufs by typing in terminal:
 
 ```
 dufs -A --assets ~/microjournal/.config/Dufs/assets
