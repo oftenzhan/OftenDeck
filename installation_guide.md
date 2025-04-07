@@ -69,13 +69,13 @@ The MicroJournal Rev. 2 ReVamp does not have any way to connect external periphe
 To mount your ext4 partition on /mnt/Backup and ensure it auto-mounts at boot, follow these steps:
 
 1. Identify the Partition
-Use the lsblk or blkid command to identify your partition (assuming it's something like /dev/sda1 or /dev/mmcblk0p1).
+Use the lsblk or blkid command to identify your `Backup` partition.
 
 ```sh
 lsblk
 ```
 
-The partition name should be...
+The partition was called `mmcblk0p3`.
 
 
 2. Create the Mount Point
@@ -86,15 +86,23 @@ sudo mkdir -p /mnt/Backup
 ```
 
 3. Mount the Partition Temporarily
-To mount the partition immediately (replace /dev/sda1 with your actual partition):
+To mount the partition immediately (replace /dev/sda1 with your actual partition). And then double check that it is mounted using lsblk.
 
 ```
 sudo mount /dev/sda1 /mnt/Backup
+sudo lsblk
 ```
-
 
 4. Edit fstab for Auto-Mount
 To ensure the partition auto-mounts at boot, you need to add it to the /etc/fstab file.
+
+First, search for the PARTUUID number.
+
+```
+sudo blkid
+```
+
+Mine was `1eb5dcad-03`. It was sequential.
 
 Open the fstab file in a text editor:
 
