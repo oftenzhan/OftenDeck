@@ -171,7 +171,7 @@ Now run and make a backup.
 ```
 $ sudo image-backup
 
-Image file to create? /mnt/Backup/20240406_oftendeck_backup.img
+Image file to create? /mnt/Backup/oftendeck_backup.img
 
 Initial image file ROOT filesystem size (MB) [2317]? 2400
 
