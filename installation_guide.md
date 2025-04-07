@@ -131,6 +131,20 @@ Check if the partition is mounted:
 df -h
 ```
 
+Double check one more time by resetting and then search in lsblk.
+
+```
+shutdown now
+```
+
+Turn on.
+
+```
+lsblk
+```
+
+You should see your `Backup` partition.
+
 ### Install `image-utils`
 
 Clone the Repository
