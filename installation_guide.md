@@ -189,3 +189,11 @@ Updating the image file is even easier:
 $ sudo image-backup /mnt/Backup/oftendeck_backup.img
 ```
 
+# Install Files
+
+There are several files that are installed using `apt`. I will install several at once.
+
+```sh
+sudo install emacs-nox hunspell-en-us syncthing
+```
+
