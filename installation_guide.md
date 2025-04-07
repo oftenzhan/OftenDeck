@@ -113,7 +113,7 @@ sudo nano /etc/fstab
 Add a new line at the end of the file for your partition, using the correct partition name and mount point. For example:
 
 ```
-/dev/sda1    /mnt/Backup    ext4    defaults    0    2
+PARTUUID=1eb5dcad-03    /mnt/Backup    ext4    defaults    0    2
 ```
 
 5. Test the Configuration
