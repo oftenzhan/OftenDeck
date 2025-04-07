@@ -177,13 +177,15 @@ Initial image file ROOT filesystem size (MB) [2317]? 2400
 
 Added space for incremental updates after shrinking (MB) [0]? 200
 
-Create /mnt/Backup/20240406_oftendeck_backup.img (y/n)?y
+Create /mnt/Backup/oftendeck_backup.img (y/n)?y
 ```
 
-This will take a few minutes depending on your model Pi, the size of your file system & other variables. Upon completion, you should find the image file you specified in the location specified in your answer to the first prompt/question above. This image file contains everything exactly as it was in your file system at the time of the backup. This image file may be written to an SD card, or mount-ed as another file system on your RPi (you can use the image-mount utility for this).
+This will take a few minutes. 
 
 Update an existing .img backup:
-To update the image file you have created is even easier; sudo image-backup <IMG_TO_UPDT>, or:
+Updating the image file is even easier:
 
-$ sudo image-backup /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img
-In other words, simply add the URL of the .img file you wish to update to the basic sudo image-backup command.
+```
+$ sudo image-backup /mnt/Backup/oftendeck_backup.img
+```
+
