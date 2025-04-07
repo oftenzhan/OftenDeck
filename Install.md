@@ -352,7 +352,7 @@ dufs -A --assets ~/microjournal/.config/Dufs/assets
 Since there is no gui, just install Emacs (no X).
 
 ```
-sudo apt-get install emacs-nox
+sudo apt-get install emacs-nox hunspell-en-us
 ```
 
 # Install Syncthing
