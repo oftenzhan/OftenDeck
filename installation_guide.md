@@ -157,20 +157,21 @@ $ cd && pwd
 $ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
 ```
 
-Staging & Usage
-Once you've cloned the image-utils files to your local git repo, you'll likely find they are much easier to use by following the very simple install procedure below. Assuming that /usr/local/sbin is in your PATH, using this install procedure makes the utilities easier to use from the command line, or (for example) in a cron job. Here's how to install:
+### Staging & Usage
 
+Install.
+
+```
 $ cd
 $ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
-Creating vs. Updating .img backups
-Refer to the Image File Utilities thread of the Raspberry Pi Forums site for documentation & support. The following is offered only as an illustration/example:
+```
 
-Create the .img backup:
-To create a NEW image backup, use the sudo image-backup command; you will be prompted for inputs. The ones I typically use are shown below - immediately following the question mark ?:
+Now run and make a backup.
 
+```
 $ sudo image-backup
 
-Image file to create? /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img
+Image file to create? MN and 20230212_Pi3B_imagebackup.img
 
 Initial image file ROOT filesystem size (MB) [2317]? 2400
 
