@@ -238,7 +238,7 @@ sudo apt-get install emacs-nox hunspell-en-us
 
 ## Install custom `init.el`
 
-Copy and paste the init.el file from this GitHub into ~/.emacs/init.el
+Copy and paste the init.el file from this GitHub into `~/.emacs/init.el`.
 
 There shouldn't be a file there. If there is, delete it and replace it with this file.
 
