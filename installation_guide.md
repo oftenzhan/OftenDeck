@@ -171,13 +171,15 @@ Now run and make a backup.
 ```
 $ sudo image-backup
 
-Image file to create? MN and 20230212_Pi3B_imagebackup.img
+Image file to create? and 20230212_Pi3B_imagebackup.img
 
 Initial image file ROOT filesystem size (MB) [2317]? 2400
 
 Added space for incremental updates after shrinking (MB) [0]? 200
 
 Create /mnt/SynologyNAS/rpi_share/raspberrypi3b/20230212_Pi3B_imagebackup.img (y/n)?y
+```
+
 This will take a few minutes depending on your model Pi, the size of your file system & other variables. Upon completion, you should find the image file you specified in the location specified in your answer to the first prompt/question above. This image file contains everything exactly as it was in your file system at the time of the backup. This image file may be written to an SD card, or mount-ed as another file system on your RPi (you can use the image-mount utility for this).
 
 Update an existing .img backup:
