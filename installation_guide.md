@@ -123,6 +123,7 @@ Test the changes by unmounting and remounting based on fstab:
 sudo umount /mnt/Backup
 sudo mount -a
 ```
+At this point, the terminal will give a warning saying that you need to reload daemon. Follow their directions. 
 
 Check if the partition is mounted:
 
