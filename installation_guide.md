@@ -1,3 +1,11 @@
+# Update Keyboard through Vial
+
+I recommend taking out the SD card to ensure that the SD card does not accidently get corrupted. The left knob button should be assigned to <f5> and the right knob should be assigned to <f6>.
+
+The picture below shows what my Vial configuration looks like as reference.
+
+[Insert Picture]
+
 # Installation Guide
 
 This is a step by step installation guide from scratch.
@@ -189,14 +197,6 @@ Updating the image file is even easier:
 $ sudo image-backup /mnt/Backup/oftendeck_backup.img
 ```
 
-# Install Emacs
-
-Since there is no gui, just install Emacs (no X). Since we also will eventually want spellcheck (hunspell), I've included an installation of that too.
-
-```
-sudo apt-get install emacs-nox hunspell-en-us
-```
-
 # Install Syncthing
 
 To install Syncthing on your Raspberry Pi and configure it for Wi-Fi access, follow these steps:
@@ -226,3 +226,29 @@ Locate the <gui> section and change the <address> to `0.0.0.0:8384`:
     <address>0.0.0.0:8384</address>
 ```
 Save and close the file (press <kbd>Ctrl+X</kbd>, then <kbd>Y</kbd>, and Enter).
+
+# Install Emacs
+
+## Installation of Emacs
+Since there is no gui, just install Emacs (no X). Since we also will eventually want spellcheck (hunspell), I've included an installation of that too.
+
+```
+sudo apt-get install emacs-nox hunspell-en-us
+```
+
+## Install custom `init.el`
+
+Copy and paste the init.el file from this GitHub into ~/.emacs/init.el
+
+There shouldn't be a file there. If there is, delete it and replace it with this file.
+
+## Install required plugins
+
+Here are the plugins to install to make it work:
+
+```
+markdown-mode
+flyspell
+dired-sidebar
+sticky-keys???
+```
