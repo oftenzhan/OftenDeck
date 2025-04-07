@@ -65,8 +65,6 @@ Like of using `dd`, this will make an `.img`file, but this will be much smaller.
 
 For me:
 I can make bootable images to share to you on GitHub
-## Step 3: Install Dufs
-This makes it easier to upload scripts.
 
 ### Make a Backup partition
 
@@ -152,6 +150,10 @@ lsblk
 ```
 
 You should see your `Backup` partition.
+
+## Step 3: Install Dufs
+This makes it easier to upload scripts.
+
 
 ### Install `image-utils`
 
@@ -241,6 +243,14 @@ sudo apt-get install emacs-nox hunspell-en-us
 Copy and paste the init.el file from this GitHub into `~/.emacs/init.el`.
 
 There shouldn't be a file there. If there is, delete it and replace it with this file.
+
+```
+Note to self:
+- Fix Backup files
+- Fix comments
+- Organize the file to work correctly
+```
+
 
 ## Install required plugins
 
