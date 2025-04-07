@@ -8,7 +8,7 @@ I etch Raspberry Pi OS Lite 32-bit onto an SD card. The version I am using is `2
 
 I used the `Disks` utility on Linux Mint Mate, but you should etch it using the software for your OS. 
 
-There are several things that are important to do before we unmount the microsd card and put it into the MicroJournal. First (optional), we will create a new partition for backup as explained in Step 2. Second, we will rotate the monitor.
+There are several things that are important to do before we unmount the microsd card and put it into the MicroJournal.
 
 We need to rotate the monitor. 
 
@@ -63,6 +63,9 @@ This makes it easier to upload scripts.
 Clone the Repository
 
 ```sh
+$ sudo apt update
+$ sudo apt upgrade
+$ sudo apt install git
 $ cd && pwd
 /home/pi
 $ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
