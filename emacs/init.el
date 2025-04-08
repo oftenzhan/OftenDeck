@@ -1,3 +1,78 @@
+;; Melpa is installed so I can install plugins when necessary
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
+
+;; Personally, I do not like autosave nor lockfiles. I disabled them.
+(setq auto-save-default nil)
+(setq make-backup-files nil)
+(setq create-lockfiles nil)
+
+;; Disabled Suspend
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-x C-z"))
+
+;; The side knob buttons of the microjournal were set to <f9> and <f8> using Vial. This binds them to Emacs for navigating buffers and screens.
+(global-set-key (kbd "<f5>") 'other-window)
+(global-set-key (kbd "<f6>") 'previous-buffer)
+
+;; This function makes all documents wordwrap.
+(global-visual-line-mode 1)
+
+;; I removed the menu-bar because it is rarely used.
+(menu-bar-mode -1)
+
+;; This is to control the left and right sidebar.
+(require 'dired-sidebar)
+(require 'imenu-list)
+
+(setq dired-sidebar-width 20)
+(setq imenu-list-size 20)
+
+(global-set-key (kbd "<f17>") 'dired-sidebar-toggle-sidebar)
+(global-set-key (kbd "<f18>") 'imenu-list-smart-toggle)
+
+;; Enable `repeat-mode` by default
+(repeat-mode 1)
+
+;; Set all custom settings in custom.el
+(setq custom-file "~/.emacs.d/custom.el")
+
+;; Add Spell-Correct
+(setq ispell-program-name "hunspell")
+(setq ispell-dictionary "en_US")
+(setenv "LANG" "en_US.UTF-8")
+(setenv "DICPATH" "/usr/share/hunspell")
+(setq ispell-local-dictionary-alist '(("en_US" "[[:alpha:]]" "[^[:alpha:]]" "[']" nil ("-d" "en_US") nil utf-8)))
+(setq ispell-extra-args '("-a" "-i" "utf-8"))
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+(with-eval-after-load 'flyspell
+  (define-key flyspell-mode-map (kbd "M-;")
+    'flyspell-auto-correct-previous-word))
+
+;; Remove ALL horizontal screen splits
+(setq split-window-preferred-function nil)
+;;(defun my-force-vertical-split (orig-fun &optional window size side)
+;;  "Force every split to be vertical."
+;;  (apply orig-fun (list window size 'right)))
+;;
+;;(advice-add 'split-window :around #'my-force-vertical-split)
+
+;; org-capture template
+
+;;(with-eval-after-load 'org
+;;  (setq org-capture-templates
+;;     '(("a" "Task" entry (file "~/org/tasks.org")
+;;	"* TODO %?\n Entered on %U\n %i\n %a")
+;;       ("b" "Note" entry (file "~/org/notes.org")
+;;	"* %?\n Entered on %U\n %i\n %a")))
+;;  )
+
+;;(add-hook 'org-capture-mode-hook
+;;	  (lambda ()
+;;	    (define-key org-capture-select-mode-map (kbd "A") #'previous-line)
+;;	    (define-key org-capture-select-mode-map (kbd "B") #'next-line)))
 
 ;; Set up the directory for backup and auto-save files
 (defvar my/backup-dir (expand-file-name "~/.emacs.d/backups/"))
