@@ -586,6 +586,13 @@ Note to self:
 - Fix Backup files
 - Fix comments
 - Organize the file to work correctly
+
+Emacs Plugins
+Bind-Key
+Flyspell
+imenu
+dired-sidebar
+markdown-mode
 ```
 
 
