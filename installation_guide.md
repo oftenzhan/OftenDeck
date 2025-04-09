@@ -581,18 +581,15 @@ Copy and paste the init.el file from this GitHub into `~/.emacs/init.el`.
 
 There shouldn't be a file there. If there is, delete it and replace it with this file.
 
-```
-Note to self:
-- Fix Backup files
-- Fix comments
-- Organize the file to work correctly
+Once the `init.el` file is placed in the proper folder, there will be an error because certain packages are not installed. Install these packages one by one by using the command `M-x package-install`
 
-Emacs Plugins
-Bind-Key
-Flyspell
-imenu
+```
+bind-keys
+flyspell
+imenu-list
 dired-sidebar
 markdown-mode
+yassnippet
 ```
 
 
