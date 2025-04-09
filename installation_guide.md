@@ -572,7 +572,7 @@ Save and close the file (press <kbd>Ctrl+X</kbd>, then <kbd>Y</kbd>, and Enter).
 Since there is no gui, just install Emacs (no X). Since we also will eventually want spellcheck (hunspell), I've included an installation of that too.
 
 ```
-sudo apt-get install emacs-nox hunspell-en-us
+sudo apt-get install emacs-nox hunspell hunspell-en-us
 ```
 
 ## Install custom `init.el`
