@@ -3,10 +3,6 @@
 # Start networking services
 echo "Starting networking services..."
 sudo systemctl start NetworkManager.service
-# or if using NetworkManager
-# sudo systemctl start NetworkManager
-# or if using Wi-Fi
-# sudo systemctl start wpa_supplicant
 
 # Start dufs and syncthing in the background
 dufs -A &  # Run dufs in the background
