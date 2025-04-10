@@ -4,7 +4,7 @@ I recommend taking out the SD card to ensure that the SD card does not accidentl
 
 The picture below shows what my Vial configuration looks like as reference.
 
-![First Layer](./)
+![First Layer](./OftenDeck-Vial-1.png)
 
 # Installation Guide
 
