@@ -36,7 +36,7 @@ show_menu() {
       show_menu
       ;;
     "Shutdown")
-      /usr/local/bin/shutdown_script.sh
+      shutdown now
       ;;
     *)
       echo "Invalid option"
@@ -59,10 +59,10 @@ show_settings() {
 
   case $SETTING_CHOICE in
     "RasPi Config")
-      /usr/local/bin/raspi_config_script.sh
+      sudo raspi-config
       ;;
     "Console Font")
-      /usr/local/bin/font_config_script.sh
+      sudo dpkg-reconfigure console-font
       ;;
     *)
       echo "Invalid option"
