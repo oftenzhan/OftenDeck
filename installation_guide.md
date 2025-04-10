@@ -66,90 +66,17 @@ Like of using `dd`, this will make an `.img`file, but this will be much smaller.
 For me:
 I can make bootable images to share to you on GitHub
 
-### Make a Backup partition
-
-First you need to make a backup partition. I made mine 20gb ext4. It probably doesn't have to be that big, but I am saving different iterations as I create the MicroDeck. Ideally, you would connect to an external usb stick or a network drive. 
-
-The MicroJournal Rev. 2 ReVamp does not have any way to connect external peripherals,so a usb-stick is a no-go. We will have network syncs later, but this approach keeps everything self-contained.
-
-To mount your ext4 partition on /mnt/Backup and ensure it auto-mounts at boot, follow these steps:
-
-1. Identify the Partition
-Use the lsblk or blkid command to identify your `Backup` partition.
+The folder we are going to save the backups in is `/mnt/backups`
 
 ```sh
-lsblk
+sudo mkdir /mnt/backups
 ```
 
-The partition was called `mmcblk0p3`.
+Then, go through the prompts. When it prompts you where to save the file, I put in `/mnt/backup/oftenzhan.img
 
+Afterwards, I run it through `image-shrink` to shrink the .img to make it fit in an smaller SD cards.
 
-2. Create the Mount Point
-Ensure the mount point /mnt/Backup exists. If not, create it with the following command:
-
-```
-sudo mkdir -p /mnt/Backup
-```
-
-3. Mount the Partition Temporarily
-To mount the partition immediately (replace /dev/sda1 with your actual partition). And then double check that it is mounted using lsblk.
-
-```
-sudo mount /dev/sda1 /mnt/Backup
-sudo lsblk
-```
-
-4. Edit fstab for Auto-Mount
-To ensure the partition auto-mounts at boot, you need to add it to the /etc/fstab file.
-
-First, search for the PARTUUID number.
-
-```
-sudo blkid
-```
-
-Mine was `1eb5dcad-03`. The file naming was sequential. where the three partitions were `-01`, `-02`, and `-03`.
-
-Open the fstab file in a text editor:
-
-```
-sudo nano /etc/fstab
-```
-
-Add a new line at the end of the file for your partition, using the correct partition name and mount point. For example:
-
-```
-PARTUUID=1eb5dcad-03    /mnt/Backup    ext4    defaults    0    2
-```
-
-5. Test the Configuration
-Test the changes by unmounting and remounting based on fstab:
-
-```
-sudo umount /mnt/Backup
-sudo mount -a
-```
-At this point, the terminal will give a warning saying that you need to reload daemon. Follow their directions. 
-
-Check if the partition is mounted:
-
-```
-df -h
-```
-
-Double check one more time by resetting and then search in lsblk.
-
-```
-shutdown now
-```
-
-Turn on.
-
-```
-lsblk
-```
-
-You should see your `Backup` partition.
+To make the root partition fit the entire SD card, use the sudo raspi-config settings to expand the partition to fit the entire SD card. 
 
 ## Step 3: Install Dufs
 This makes it easier to upload scripts.
