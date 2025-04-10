@@ -2,7 +2,7 @@
 
 # Start networking services
 echo "Starting networking services..."
-sudo systemctl start networking
+sudo systemctl start NetworkManager.service
 # or if using NetworkManager
 # sudo systemctl start NetworkManager
 # or if using Wi-Fi
@@ -25,7 +25,7 @@ echo "To connect to Dufs, use: http://$IP_ADDRESS:5000/"
 # Trap Ctrl+C and kill both processes, then stop the network
 trap 'kill $DUFS_PID $SYNCTHING_PID; echo "Stopping dufs and syncthing..."; \
       echo "Stopping networking services..."; \
-      sudo systemctl stop networking; \
+      sudo systemctl stop NetworkManager.service \
       # or if using NetworkManager
       # sudo systemctl stop NetworkManager
       # or if using Wi-Fi
