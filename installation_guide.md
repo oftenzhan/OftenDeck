@@ -4,7 +4,7 @@ I recommend taking out the SD card to ensure that the SD card does not accidentl
 
 The picture below shows what my Vial configuration looks like as reference.
 
-[Insert Picture]
+![First Layer](./)
 
 # Installation Guide
 
