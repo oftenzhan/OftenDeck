@@ -531,3 +531,62 @@ flyspell
 dired-sidebar
 sticky-keys???
 ```
+
+# Install Configuration Whiptail
+
+# Configure tty1 and tty2
+
+## tty2
+
+### 1. Enable Auto-login on TTY2
+
+Create an override for getty@tty2.service:
+
+sudo systemctl edit getty@tty2
+
+Add the following:
+
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin oftendeck --noclear %I $TERM
+```
+
+(Replace `oftendeck` with your username if different.)
+
+Then reload the daemon:
+
+```
+sudo systemctl daemon-reexec
+sudo systemctl restart getty@tty2
+```
+
+### 2. tty2 Custom Autostart Script
+
+Create a new file:
+
+```
+sudo nano /etc/profile.d/tty2-startup.sh
+```
+
+Add this:
+
+```
+#!/bin/bash
+
+# Only run on TTY2
+if [ "$(tty)" = "/dev/tty2" ]; then
+    # Set custom font
+    setfont /usr/share/consolefonts/Lat15-TerminusBold20x10.psf.gz
+
+    # Launch raspi-config
+    sudo raspi-config
+fi
+```
+
+Make it executable:
+
+```
+sudo chmod +x /etc/profile.d/tty2-startup.sh
+```
+
