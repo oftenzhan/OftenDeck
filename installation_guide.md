@@ -590,3 +590,41 @@ Make it executable:
 sudo chmod +x /etc/profile.d/tty2-startup.sh
 ```
 
+### tty1
+
+Step 1: Auto-login on TTY1 as Your User
+
+```
+sudo systemctl edit getty@tty1
+```
+
+Paste in the following override:
+
+```
+[Service]
+ExecStart=
+ExecStart=-/sbin/agetty --autologin pi --noclear %I $TERM
+```
+
+Then reload the systemd config:
+
+```
+sudo systemctl daemon-reexec
+sudo systemctl restart getty@tty1
+```
+
+Step 2: Add Emacs to Auto-start on TTY1
+
+Edit your .bash_profile
+
+```
+nano /home/oftendeck/.bash_profile
+```
+
+Add this to the end of the file:
+
+if [ "$(tty)" = "/dev/tty1" ]; then
+    exec emacs
+fi
+
+This ensures Emacs only starts when you log in on TTY1 and replaces the shell session with Emacs (exec saves resources).
