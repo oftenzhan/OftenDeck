@@ -14,7 +14,6 @@ show_menu() {
     "Shutdown" "(Shutdown the system)" \
     --ok-button "Select" --cancel-button "Exit" 3>&1 1>&2 2>&3)
 
-  # If "Exit" (Cancel) is selected, end the script
   if [ $? -ne 0 ]; then
     clear
     exit 0
@@ -28,12 +27,11 @@ show_menu() {
       show_sharing
       ;;
     "Backup")
-      /usr/local/bin/backup_script.sh
+      /usr/local/bin/often-backup.sh
       show_menu
       ;;
     "Battery Saving Mode")
-      /usr/local/bin/battery_saving_mode_script.sh
-      show_menu
+      show_battery_menu
       ;;
     "Shutdown")
       shutdown now
@@ -52,7 +50,6 @@ show_settings() {
     "Console Font" "(Change font settings)" \
     --ok-button "Select" --cancel-button "Back" 3>&1 1>&2 2>&3)
 
-  # If "Back" (Cancel) is selected, return to main menu
   if [ $? -ne 0 ]; then
     show_menu
   fi
@@ -62,14 +59,13 @@ show_settings() {
       sudo raspi-config
       ;;
     "Console Font")
-      sudo dpkg-reconfigure console-font
+      sudo dpkg-reconfigure console-setup
       ;;
     *)
       echo "Invalid option"
       ;;
   esac
 
-  # Always return to main menu after action
   show_menu
 }
 
@@ -80,24 +76,48 @@ show_sharing() {
     "WiFi Network" "(Connect to external WiFi & Share)" \
     --ok-button "Select" --cancel-button "Back" 3>&1 1>&2 2>&3)
 
-  # If "Back" (Cancel) is selected, return to main menu
   if [ $? -ne 0 ]; then
     show_menu
   fi
 
   case $SHARING_CHOICE in
     "WiFi AP")
-      /usr/local/bin/wifi_ap_script.sh
+      /usr/local/bin/often-wifi-ap.sh
       ;;
     "WiFi Network")
-      /usr/local/bin/wifi_network_script.sh
+      /usr/local/bin/often-wifi-network.sh
       ;;
     *)
       echo "Invalid option"
       ;;
   esac
 
-  # Always return to main menu after action
+  show_menu
+}
+
+# Function to display Battery Saving Mode sub-menu
+show_battery_menu() {
+  BATTERY_CHOICE=$(whiptail --title "Battery Saving Mode" --menu "By default, Battery Saving Mode is turned on at boot." $TERMINAL_HEIGHT $TERMINAL_WIDTH 2 \
+    "Turn Off" "(Turn Off Battery Saving Mode)" \
+    "Turn On" "(Reenable Battery Saving Mode)" \
+    --ok-button "Select" --cancel-button "Back" 3>&1 1>&2 2>&3)
+
+  if [ $? -ne 0 ]; then
+    show_menu
+  fi
+
+  case $BATTERY_CHOICE in
+    "Turn Off")
+      /usr/local/bin/often-battery-mode-off.sh
+      ;;
+    "Turn On")
+      /usr/local/bin/often-battery-mode-on.sh
+      ;;
+    *)
+      echo "Invalid option"
+      ;;
+  esac
+
   show_menu
 }
 
@@ -106,7 +126,6 @@ shutdown_system() {
   whiptail --title "Shutdown" --yesno "Do you really want to shutdown?" $TERMINAL_HEIGHT $TERMINAL_WIDTH \
     --yes-button "Yes" --no-button "Back"
 
-  # If "Back" (No) is selected, return to main menu
   if [ $? -ne 0 ]; then
     show_menu
   fi
