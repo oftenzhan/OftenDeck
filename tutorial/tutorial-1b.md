@@ -7,8 +7,7 @@ As you can see, we are on the second file for the first tutorial titled Tutorial
 
 ## Cycling Through Open Documents
 
-Now, whenever you open up a new document, the old previous files are still open, just running in the background. When I press, not rotate, the leftknob, it will rotate between all the documents running in the background. When I press it once, you'll see the TutorialPart1A.md. When I press it again, you will see the Welcome Screen, then the Scratch screen, and then back to this file, TutorialPart1B.md.
-
+Now, whenever you open up a new document, the old previous files are still open, just running in the background. When I press, not rotate, the leftknob, it will rotate between all the documents running in the background. When I press the leftknob once, you'll see all the files currently opened including `tutorial-1a.md`, the Emacs welcome screen, and the scratch buffer.
 
 ## Returning to Tutorial Part 1A
 
