@@ -10,7 +10,7 @@ show_menu() {
     "Settings" "(Configure device)" \
     "Sharing" "(Wirelessly connect to device)" \
     "Backup" "(Generate an SD card image backup)" \
-    "Battery Saving Mode" "(Enable battery saving mode)" \
+    "Battery Saving Mode" "(Toggle battery saving mode)" \
     "Shutdown" "(Shutdown the system)" \
     --ok-button "Select" --cancel-button "Exit" 3>&1 1>&2 2>&3)
 
