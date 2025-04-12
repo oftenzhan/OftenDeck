@@ -517,24 +517,11 @@ There shouldn't be a file there. If there is, delete it and replace it with this
 Once the `init.el` file is placed in the proper folder, there will be an error because certain packages are not installed. Install these packages one by one by using the command `M-x package-install`
 
 ```
-bind-keys
-flyspell
+bind-key
 imenu-list
 dired-sidebar
 markdown-mode
-yassnippet
-```
-
-
-## Install required plugins
-
-Here are the plugins to install to make it work:
-
-```
-markdown-mode
-flyspell
-dired-sidebar
-sticky-keys???
+yasnippet
 ```
 
 # Install Configuration Whiptail
