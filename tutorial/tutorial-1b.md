@@ -2,7 +2,7 @@
 
 ## Getting Started with Part 1B
 
-As you can see, we are on the second file for the first tutorial titled Tutorial Part 1B. Let's move to the other screen by pressing rightknob, then we'll toggle off the navigation tree by again pressing <shift-leftknob>.
+As you can see, we are on the second file for the first tutorial titled Tutorial Part 1B. Let's move to the other screen by pressing rightknob, then we'll toggle off the navigation tree by again pressing `Shift-Leftknob`.
 
 
 ## Cycling Through Open Documents
