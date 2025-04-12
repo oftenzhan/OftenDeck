@@ -526,6 +526,15 @@ yasnippet
 
 # Install Configuration Whiptail
 
+Put all of the files in /navigation in `/usr/local/bin/`
+
+make executable by typing
+
+```
+chmod +x often-*
+```
+
+
 # Configure tty1 and tty2
 
 ## tty2
