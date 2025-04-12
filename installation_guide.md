@@ -134,6 +134,9 @@ In order to install `Dufs`, Rust and Cargo need to be installed.
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
+```
+. "$HOME/.cargo/
+```
 2. Install Dufs
 
 Afterwards, Dufs is installed using cargo.
