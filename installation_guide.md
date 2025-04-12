@@ -73,6 +73,50 @@ The folder we are going to save the backups in is `/mnt/backups`
 sudo mkdir /mnt/backups
 ```
 
+### Install `image-utils`
+
+Clone the Repository
+
+```sh
+$ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
+$ sudo apt install git -y
+$ cd && pwd
+/home/pi
+$ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
+```
+
+### Staging & Usage
+
+Install.
+
+```
+$ cd
+$ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
+```
+
+Now run and make a backup.
+
+```
+$ sudo image-backup
+
+Image file to create? /mnt/Backup/oftendeck_backup.img
+
+Initial image file ROOT filesystem size (MB) [3007]? 3500
+
+Added space for incremental updates after shrinking (MB) [0]? 200
+
+Create /mnt/Backup/oftendeck_backup.img (y/n)?y
+```
+
+This will take a few minutes. 
+
+Update an existing .img backup:
+Updating the image file is even easier:
+
+```
+$ sudo image-backup /mnt/Backup/oftendeck_backup.img
+```
+
 Then, go through the prompts. When it prompts you where to save the file, I put in `/mnt/backup/oftenzhan.img
 
 Afterwards, I run it through `image-shrink` to shrink the .img to make it fit in an smaller SD cards.
@@ -420,49 +464,7 @@ All the assets should be put in the assets folder and link it when running Dufs 
 ```
 dufs -A --assets ~/microjournal/.config/Dufs/assets
 ```
-### Install `image-utils`
 
-Clone the Repository
-
-```sh
-$ sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y
-$ sudo apt install git -y
-$ cd && pwd
-/home/pi
-$ git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git
-```
-
-### Staging & Usage
-
-Install.
-
-```
-$ cd
-$ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
-```
-
-Now run and make a backup.
-
-```
-$ sudo image-backup
-
-Image file to create? /mnt/Backup/oftendeck_backup.img
-
-Initial image file ROOT filesystem size (MB) [3007]? 3500
-
-Added space for incremental updates after shrinking (MB) [0]? 200
-
-Create /mnt/Backup/oftendeck_backup.img (y/n)?y
-```
-
-This will take a few minutes. 
-
-Update an existing .img backup:
-Updating the image file is even easier:
-
-```
-$ sudo image-backup /mnt/Backup/oftendeck_backup.img
-```
 
 # Install Syncthing
 
