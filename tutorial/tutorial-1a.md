@@ -26,16 +26,16 @@ Though, this can be used on other screens and other devices.
 
 Today, I want to show you the basic navigation and ecosystem of the OftenDeck. 
 
-It’s built around Emacs. As you can see, when I booted up the WriterDeck, it boots directly onto Emacs. On it, it has the tutorial which I highly recommend to learn the basic key bindings. I pressed `C-x C-f` to open up to open up this document. This is one way to open documents. Another way is to press shift-leftknob to toggle the directory tree. Here, you can navigate to other files. To move to this sidebar or just to another split screen, you press <rightknob>.
+It’s built around Emacs. As you can see, when I booted up the WriterDeck, it boots directly onto Emacs. On the default welcome screen, Emacs has a tutorial which I highly recommend as an introductory course to learn basic key bindings. I pressed `C-x C-f` and `TAB` AND `RET` to open this document. This is one way to open documents. Another way is to press `SHIFT-Leftknob` to toggle the directory tree. Here, you can navigate to other files. To move to this sidebar or just to another split screen, you press <rightknob>.
 
 ## Configuring the Leftknob and Rightknob
 
-If you just installed this onto your Microjournal Rev.2.Revamp, the leftknob and rightknob buttons have to be changed using Vial to <f5> and <f6> for this to work. A picture of my Vial configuration is on my GitHub page in the video description below.
+If you just installed this onto your Microjournal Rev.2.Revamp, the leftknob and rightknob buttons have to be bound through Vial to <f5> and <f6>. A picture of my Vial configuration is on my GitHub page in the video description below.
 
 
 ## Switching to Tutorial Part 1B
 
-Now, let’s move to the other file Tutorial Part 1B using the directory tree, the rightknob, and the RET.
+Now, let’s move to the other file Tutorial Part 1B using the directory tree.
 
 
 ---
@@ -59,6 +59,7 @@ There is a way to temporarily use common keybindings like <C-c> for copy and <C-
 - To copy and paste: You do C-space and arrow keys to highlight. Then you press <M-w> to withdraw.
 - To paste, you use <C-y> to yank it.
 - To cut, you press <C-w> to wipe.
+- To copy, you press <M-w>.
 - <M-y> means to yank again, going through your clipboard history, which Emacs calls the kill ring.
 
 
