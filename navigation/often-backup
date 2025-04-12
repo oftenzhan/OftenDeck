@@ -1,3 +1,13 @@
 #!/bin/bash
 
-sudo image-backup --initial /mnt/backup/oftendeck.img 
+# Get the current date in YYYYMMDD format
+today=$(date +%Y%m%d)
+
+# Define the path once
+img="/mnt/backups/oftendeck${today}.img"
+
+# Step 1: Create the backup image
+sudo image-backup --initial "$img"
+
+# Step 2: Shrink the same image
+sudo image-shrink "$img"
