@@ -223,6 +223,31 @@ imenu-list
 dired-sidebar
 markdown-mode
 yasnippet
+evil
+```
+
+## Link `sudo emacs` with `emacs`
+
+When you run `sudo emacs`, Emacs uses the **root user's config** instead of your own.  
+If you want both your normal user and root to use the same configuration, you can **symlink** your config folder.
+
+### Step 1: Remove Root’s Existing Emacs Config
+
+First, clear out any existing config for the root user.
+
+```bash
+sudo rm -rf /root/.emacs.d
+sudo rm -f /root/.emacs
+```
+
+### Step 2: Create a Symbolic Link
+
+Now create a symlink from your user config to root’s config location.
+
+Replace /home/yourusername/ with your actual username path:
+
+```bash
+sudo ln -s /home/yourusername/.emacs.d /root/.emacs.d
 ```
 
 # Install Configuration Whiptail
