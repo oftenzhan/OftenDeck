@@ -1,53 +1,13 @@
 # Introduction
 
-I am using Emacs. I changed the knobs in Vial the buttons on the left and right knobs to toggle buffers and screen switchings.
+I am using Emacs. I'm constantly playing around with the `init.el` file. This page documents my experimental settings.
 
-The splitscreen dimensions are made specifically for the font size:
+# Vial, Left and Right Knob
 
-`utf-8 | Terminis Bold | 12x24`
-
-You can edit the console font by typing into the terminal:
-`sudo dpkg-reconfigure console-setup`
-
-Below is my `init.el` file.
-
-```
-;; Personally, I do not like autosave nor lockfiles. I disabled them.
-(setq auto-save-default nil)
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-
-;; Disabled ' Suspend' because sometimes the microjournal freezes when using it.
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-x C-z"))
-
-;; The side knob buttons of the microjournal were set to <f9> and <f8> using Vial, then I bound them to Emacs for navigation.  
-(global-set-key (kbd "<f9>") 'other-window)
-(global-set-key (kbd "<f8>") 'previous-buffer)
-
-;; This function makes all documents word-wrap.
-(global-visual-line-mode 1)
-
-;; I removed the menu-bar because it is rarely used.
-(menu-bar-mode -1)
-
-;; Makes the top bar of the screen (header-line) show what header or subheader the cursor is on. Also, it makes the top bar white.
-(which-function-mode)
-(setq-default header-line-format '((which-func-mode ("" which-func-format ""))))
-(set-face-attribute 'header-line nil
-		    :background "white")
-
-;; Only shows the name of the document in the bottom bar (mode-line) of the screen 
-(setq-default mode-line-format '("" "%b"))
-
-;; Splits the window into three different lengths: ~25% ~50% ~25%.
-(split-window-right 25)
-(other-window -1)
-(split-window-horizontally 57)
-```
-
+I changed the knobs in Vial the buttons on the left and right knobs to toggle buffer and screen switching.
 
 # Installing `fbterm`
+
 To leverage the limits of a non-X11 system, we will run the terminal through a "frame buffer". This allows us to do several things:
 - Open up different fonts
 - Expand colors to from 8 in TTY to 256 in Framebuffer.
@@ -68,7 +28,7 @@ Edit the line
 
 # Installing `fbi`
 
-To be able to preview PDF and view images, install FBGS.
+To be able to preview PDF and view image without x-11, install FBI (frame buffer image), FBGS (frame buffer ghost script), and FIM (FBI improved).
 
 ```sh
 sudo apt install fbi
