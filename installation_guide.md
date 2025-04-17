@@ -337,3 +337,11 @@ sudo chmod +x /etc/profile.d/tty1-startup.sh
 
 ```
 
+# Installing `fbterm` and `fbi`
+
+Instead of using an X-11 GUI, The terminal can be opened up with much more colors and font choices using the framebuffe, `fbterm`. One of the usefulnesses of using the framebuffer is that images and documents can be opened without opening X-11. For example, having the Apple logo and the windows logo during the beginning of boot up is used directly from the framebuffer. This allows us to be able to preview latex documents and generate PDFs prior to printing for markdown.  Viewing pictures and documents using an app called Frame Buffer Image, `fbi`.
+
+```shell
+sudo apt install fbterm fbi
+```
+
