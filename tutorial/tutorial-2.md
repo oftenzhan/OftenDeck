@@ -34,17 +34,16 @@ Using Wifi AP, a Wifi signal is created by the Writerdeck itself. This means tha
 
 Using Wifi Network, you connect to a local network. Connecting to a public network, especially at a coffee shop or hotel, has an inherit risk of people snooping at your stuff or install some sort of virus.
 
-### Sharing Apps
+### Wifi Sharing
 
 #### There are two apps that will be turned on during Wifi sharing. Here is a brief description on how they work.
 
 - Dufs: This is a very lightweight minimalistic file sharing and uploading app. It also can create new text files and edit them. You access it on your phone or computer browser.
 - Syncthing syncs folders between your devices automatically, securely, and without the cloud. It’s perfect for keeping notes, documents, or projects updated across phones, PCs, and servers.
 
-## Hedgedoc
+### MarkDoc
 
-Hedgedoc is a self-hosted markdown editor.
+Markdoc is a self-hosted markdown editor.
 
-For the sake of saving RAM, Hedgedoc is opened by itself. It is not very resource heavy compared to `Electron` apps, but it is not as lightweight as `Go`, but with larger documents, it can be. 
-
+For the sake of saving RAM, MarkDoc is opened by itself. It is not very resource heavy compared to heavy `Electron` apps, nor medium `Node.js` apps, but it can consume much RAM when opening and editing large documents.
 
