@@ -345,6 +345,42 @@ Instead of using an X-11 GUI, The terminal can be opened up with much more color
 sudo apt install fbterm fbi
 ```
 
+I like Terminus Bold, so I have to install the `.ttf` file for the framebuffer instead of using the Linux Console `.psf.gz` format.
+
+```shell
+sudo apt install xfonts-terminus
+```
+
+Now, I have to fix the .fbtermrc first you have to generate it and then edit.
+
+```shell
+fbterm
+```
+
+then press `ctrl+d`
+
+Then you edit the .fbtermrc
+
+```
+emacs ~/.fbtermrc
+```
+
+In it, there are three lines that need to be edited:
+
+```
+font-names=Terminus:style=Bold
+```
+
+```
+font-size=40
+```
+
+```
+screen-rotate=3
+```
+
+
+
 
 
 
