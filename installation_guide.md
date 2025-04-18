@@ -379,7 +379,57 @@ font-size=40
 screen-rotate=3
 ```
 
+# Install Bluetooth keyboard 
 
+While I like using the MicroJournal rev 2 revamp on the go, when I'm using it at home, I prefer to use a Bluetooth keyboard because it is better for ergonomics. I can put the screen farther away and raise it up so that's eye level.
+
+I am using the keycron q15 Max because it has two knobs.
+
+One thing that's very important is to set it to the window setting because the MAC address changes every time using the Macintosh setting.
+
+1. Start and enable the Bluetooth service
+
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+
+2. Scan for devices
+
+First, launch the Bluetooth control tool:
+
+bluetoothctl
+
+Inside the prompt, turn on the agent and set it to default:
+
+power on
+agent on
+default-agent
+scan on
+
+Now put your Bluetooth keyboard in pairing mode. You should see it appear like this:
+
+[NEW] Device XX:XX:XX:XX:XX:XX Your-Keyboard-Name
+
+3. Pair and trust the keyboard
+
+Copy the device MAC address (XX:XX:XX:XX:XX:XX) and type:
+
+pair XX:XX:XX:XX:XX:XX
+
+If the keyboard requires you to enter a code, it’ll display in the terminal, and you must type that code on the keyboard and hit Enter.
+
+Then trust it:
+
+trust XX:XX:XX:XX:XX:XX
+
+And finally:
+
+connect XX:XX:XX:XX:XX:XX
+
+5. Save and exit
+
+quit
+
+It should not connect every time every single time you turn off battery saving mode.
 
 
 
