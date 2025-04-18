@@ -47,3 +47,9 @@ Markdoc is a self-hosted markdown editor.
 
 For the sake of saving RAM, MarkDoc is opened by itself. It is not very resource heavy compared to heavy `Electron` apps, nor medium `Node.js` apps, but it can consume much RAM when opening and editing large documents.
 
+# Backup
+
+This backup makes a ~8 gb `.img` file using RonR Image Utility. It does two things. It creates an image of the OS based on the files. Then it shrinks the root partitions to the smallest size. This allows the OS to adapt to other microsd card sizes.
+
+Originally, I wanted it to also compress it into a `.xz` file as well, but that takes forever using the RasPi Zero. It took hours to complete. So I removed it.
+
