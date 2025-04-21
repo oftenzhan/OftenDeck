@@ -474,7 +474,13 @@ I added this to `.emacs/init.rc
 
 ```
 
-- Add Pandoc Mode
+- Add Pandoc Mode [DONE]
+
+In Terminal:
+
+```
+sudo apt install pandoc
+```
 
 In Emacs:
 
