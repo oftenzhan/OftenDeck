@@ -387,47 +387,48 @@ I am using the keycron q15 Max because it has two knobs.
 
 One thing that's very important is to set it to the window setting because the MAC address changes every time using the Macintosh setting.
 
-1. Start and enable the Bluetooth service
+1. Turn off Battery Saving Mode
 
-sudo systemctl start bluetooth
-sudo systemctl enable bluetooth
+`Main Menu > Battery Mode > Battery Saving Mode Off`
 
 2. Scan for devices
 
 First, launch the Bluetooth control tool:
 
+```
 bluetoothctl
+```
 
 Inside the prompt, turn on the agent and set it to default:
 
+```
 power on
 agent on
 default-agent
 scan on
+```
 
 Now put your Bluetooth keyboard in pairing mode. You should see it appear like this:
 
+```
 [NEW] Device XX:XX:XX:XX:XX:XX Your-Keyboard-Name
+```
 
 3. Pair and trust the keyboard
 
-Copy the device MAC address (XX:XX:XX:XX:XX:XX) and type:
+Copy the device MAC address (XX:XX:XX:XX:XX:XX) and type the address. if you press tab after the first few letters, it will autocomplete it for you.
 
+```
 pair XX:XX:XX:XX:XX:XX
-
-If the keyboard requires you to enter a code, it’ll display in the terminal, and you must type that code on the keyboard and hit Enter.
-
-Then trust it:
-
 trust XX:XX:XX:XX:XX:XX
-
-And finally:
-
 connect XX:XX:XX:XX:XX:XX
+```
 
 5. Save and exit
 
+```
 quit
+```
 
 It should not connect every time every single time you turn off battery saving mode.
 
