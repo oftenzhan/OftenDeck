@@ -432,6 +432,8 @@ quit
 
 It should not connect every time every single time you turn off battery saving mode.
 
+# Print Preview
 
+To make print preview work, first you have to make a script. I used a modified stripped down version of `fbgs` but instead of using `fbi`, it uses `fim`. I removed all the flags.
 
 
