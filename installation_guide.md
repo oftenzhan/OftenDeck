@@ -438,12 +438,25 @@ It should not connect every time every single time you turn off battery saving m
 
 To make print preview work, first you have to make a script. I used a modified stripped down version of `fbgs` but instead of using `fbi`, it uses `fim`. I removed all the flags.
 
+Sadly, because we are in simple console mode there is no way to do this in split pane. To view a PDF, it has to be in full screen.
+
 ```
 insert script here
 ```
 
 ## Connect with Emacs
 
-To print preview, you need to export the file into PDF first. Then preview it. Once it looks ready, you can print it using CUPS. 
+To print preview, you need to export the file into PDF first. Then preview it. Once it looks ready, you can print it using CUPS. You need to add the following to the init file:
+
+```
+insert init here
+
+```
+
+### Print to PDF and preview
+
+### Print to CUPS
+
+
 
 
