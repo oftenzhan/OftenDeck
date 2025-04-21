@@ -475,6 +475,14 @@ I added this to `.emacs/init.rc
 ```
 
 - Add Pandoc Mode
+
+In Emacs:
+
+```
+M-x package-install RET pandoc-mode RET
+
+
+```
 - Add Marktext
    - Remove Dufs?
 - Remove Unnecessary Shortcuts
