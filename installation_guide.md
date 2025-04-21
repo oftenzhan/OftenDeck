@@ -457,6 +457,16 @@ insert init here
 
 ### Print to CUPS
 
+- Fix Mode Line
+   - File name
+   - Word Count
+- Add Pandoc Mode
+- Add Marktext
+   - Remove Dufs?
+- Remove Unnecessary Shortcuts
+- Add plugins to help with world-building.
+
+
 
 
 
