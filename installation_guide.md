@@ -457,9 +457,23 @@ insert init here
 
 ### Print to CUPS
 
-- Fix Mode Line
+- Fix Mode Line [DONE]
    - File name
    - Word Count
+
+I added this to `.emacs/init.rc
+
+```
+(setq-default mode-line-format
+  '("%e"
+    mode-line-front-space
+    "File: %b "
+    " | Words: "
+    (:eval (format "%d" (count-words (point-min) (point-max))))
+    mode-line-end-spaces))
+
+```
+
 - Add Pandoc Mode
 - Add Marktext
    - Remove Dufs?
