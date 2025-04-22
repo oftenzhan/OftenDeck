@@ -496,12 +496,6 @@ M-x package-install RET pandoc-mode RET
 
 
 ```
-- Add Marktext
-   - Remove Dufs?
-- Remove Unnecessary Shortcuts
-- Add plugins to help with world-building.
-
-
-
-
-
+- Add Trulio
+- Update all files (scripts)
+- Make tty1 exec fbterm
