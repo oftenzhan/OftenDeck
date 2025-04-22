@@ -446,7 +446,46 @@ To make print preview work, first you have to make a script. I used a modified s
 Sadly, because we are in simple console mode there is no way to do this in split pane. To view a PDF, it has to be in full screen.
 
 ```
-insert script here
+#!/bin/sh
+
+#
+# PostScript/pdf viewer for the linux framebuffer console
+# This version uses FIM instead of fbi and removes parsing logic.
+#
+
+# tmp dir
+DIR="$(mktemp -dtp ${TMPDIR-/var/tmp} fbgs-XXXXXX)"
+test -d "$DIR" || exit 1
+trap "rm -rf $DIR" EXIT
+
+# Default options
+device="png16m"
+
+# Check if file argument is provided
+if [ ! -f "$1" ]; then
+    echo "fbgs: cannot stat '$1': No such file or directory"
+    exit 1
+fi
+
+# Run Ghostscript to convert the file to images (PNG format)
+echo
+echo "### Rendering pages, please wait ... ###"
+echo
+gs -dSAFER -dNOPAUSE -dBATCH \
+   -sDEVICE=${device} -sOutputFile=$DIR/ps%03d.png \
+   "$1"
+
+# Check if the conversion generated any images
+pages=$(ls $DIR/ps*.png 2>/dev/null | wc -l)
+if [ "$pages" -eq "0" ]; then
+    echo
+    echo "Oops: Ghostscript wrote no pages?"
+    echo
+    exit 1
+fi
+
+# Use FIM to display the converted images
+fim -q -C 'g:_orientation=3' $DIR/ps*.png
 ```
 
 ## Connect with Emacs
