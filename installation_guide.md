@@ -310,11 +310,8 @@ Add this:
 
 # Only run on TTY2
 if [ "$(tty)" = "/dev/tty2" ]; then
-    # Set custom font
     setfont /usr/share/consolefonts/Lat15-TerminusBold20x10.psf.gz
-
-    # Launch raspi-config
-    sudo raspi-config
+    exec often-navscreen
 fi
 ```
 
