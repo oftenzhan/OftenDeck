@@ -335,7 +335,8 @@ sudo nano /etc/profile.d/tty1-startup.sh
 
 # Only run this if we're on tty1
 if [[ "$(tty)" == "/dev/tty1" ]]; then
-  exec emacs
+  exec fbterm
+  emacs
 fi
 ```
 
