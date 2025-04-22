@@ -556,7 +556,33 @@ Restart the system
 sudo systemctl restart cups
 ```
 
+View cups by typing in your phone or computer web browser:
 
+```
+http://[raspberrypi's-ip]:631
+```
+
+Personally, I had to change my IP address to my printers IP address.
+
+```
+sudo nano /etc/cups/printers.conf
+```
+
+I searched for the text:
+
+```
+<Printer EPSON567170>
+Info Epson ET-3760 Series
+DeviceURI ipp://EPSON567170.local/ipp/print
+...
+</Printer>
+```
+
+and I replaced it with my network printers personal IP address
+
+```
+ipp://[PRINTER_IP]/ipp/print
+```
 # Fix Mode Line [DONE]
    - File name
    - Word Count
