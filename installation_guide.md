@@ -613,7 +613,7 @@ In Emacs:
 ```
 M-x package-install RET pandoc-mode RET
 
-``
+```
 # Link config emacs and sudo emacs
 
 ```
