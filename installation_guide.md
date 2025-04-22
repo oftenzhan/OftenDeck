@@ -499,3 +499,4 @@ M-x package-install RET pandoc-mode RET
 - Add Trulio
 - Update all files (scripts)
 - Make tty1 exec fbterm
+- update tty2 to make RasPi config smaller text
