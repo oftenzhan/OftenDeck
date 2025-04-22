@@ -53,3 +53,11 @@
 
 ;; Remove ALL horizontal screen splits
 (setq split-window-preferred-function nil)
+
+(setq-default mode-line-format
+	      '("%e"
+		mode-line-front-space
+		"File: %b "
+		" | Words: "
+		(:eval (format "%d" (count-words (point-min) (point-max))))
+		mode-line-end-spaces))
