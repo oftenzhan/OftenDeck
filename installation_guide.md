@@ -1,7 +1,7 @@
 ```
 Personal comments: One of the annoyances of using a RasPi Zero 2w and the MicroJournal Rev.2.Revamp is...
 1. the lack of peripherals. There is no way to plug in a physical USB stick to transfer info. 
-2. Ergonomics is bad. I am forced to learn forward rland it strains my neck and upper back.
+2. Ergonomics is bad. I am forced to learn forward and it strains my neck and upper back.
 3. There is not much info on the screen of the WiseCoco display, so hardware configuration is difficult.
 ```
 
