@@ -501,7 +501,63 @@ insert init here
 
 ### Print to CUPS
 
-- Fix Mode Line [DONE]
+```
+sudo apt update
+sudo apt install cups
+sudo usermod -aG lpadmin $USER
+sudo nano /etc/cups/cupsd.conf
+```
+
+Look for
+
+```
+Listen localhost:631
+```
+
+Change it to:
+
+```
+Listen 0.0.0.0:631
+```
+
+Also, change the following:
+
+Looks something like this.
+
+```
+<Location />
+  Order allow,deny
+  Allow localhost
+</Location>
+
+<Location /admin>
+  Order allow,deny
+  Allow localhost
+</Location>
+```
+Change to ...
+
+```
+
+<Location />
+  Order allow,deny
+  Allow all
+</Location>
+
+<Location /admin>
+  Order allow,deny
+  Allow all
+</Location>
+```
+
+Restart the system
+
+```
+sudo systemctl restart cups
+```
+
+
+# Fix Mode Line [DONE]
    - File name
    - Word Count
 
@@ -531,8 +587,8 @@ In Emacs:
 ```
 M-x package-install RET pandoc-mode RET
 
-
 ```
+
 - [ ] Add Trilium
 - [X] Update all files (scripts)
 - [X] Make tty1 exec fbterm
