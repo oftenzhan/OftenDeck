@@ -613,6 +613,15 @@ In Emacs:
 ```
 M-x package-install RET pandoc-mode RET
 
+``
+# Link config emacs and sudo emacs
+
+```
+sudo -i
+```
+
+```
+ln -s /home/your-username/.emacs.d /root/.emacs.d
 ```
 
 - [ ] Add Trilium
