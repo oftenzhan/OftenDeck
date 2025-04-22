@@ -500,4 +500,4 @@ M-x package-install RET pandoc-mode RET
 - Update all files (scripts)
 - Make tty1 exec fbterm
 - update tty2 to make RasPi config smaller text
-- have all backups save in ~/.emacs/backups/
+- change init.rc to have all backups save in ~/.emacs/backups/
