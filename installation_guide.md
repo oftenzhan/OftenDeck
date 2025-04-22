@@ -535,7 +535,7 @@ M-x package-install RET pandoc-mode RET
 ```
 - [ ] Add Trilium
 - [X] Update all files (scripts)
-- [ ] Make tty1 exec fbterm
+- [X] Make tty1 exec fbterm
 - [ ] update tty2 to make RasPi config smaller text
 - [ ] change init.rc to have all backups save in ~/.emacs/backups/
 - [X] update tutorial
