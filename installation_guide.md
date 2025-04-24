@@ -661,6 +661,6 @@ Add this to init.el
 - [X] Update all files (scripts)
 - [X] Make tty1 exec fbterm
 - [ ] update tty2 to make RasPi config smaller text
-- [ ] change init.rc to have all backups save in ~/.emacs/backups/
+- [X] change init.rc to have all backups save in ~/.emacs/backups/
 - [X] update tutorial
-- [ ] In initrc, bind C-z with undo. (This is because I unbound C-z from `suspend to background`.
+- [X] In initrc, bind C-z with undo. (This is because I unbound C-z from `suspend to background`.
