@@ -1,4 +1,5 @@
 #!/bin/bash
+# Used for OftenDeck. Last updated 2025.04.24
 
 # Get the current terminal size (width and height)
 TERMINAL_WIDTH=$(tput cols)
