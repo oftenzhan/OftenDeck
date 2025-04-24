@@ -600,7 +600,7 @@ I added this to `.emacs/init.rc
 
 ```
 
-- Add Pandoc Mode [DONE]
+# Add Pandoc Mode [DONE]
 
 In Terminal:
 
@@ -622,6 +622,39 @@ sudo -i
 
 ```
 ln -s /home/your-username/.emacs.d /root/.emacs.d
+```
+
+# Save Backup and Autosaves in different file location
+
+Add to init.el
+
+```
+;; Create the backup directory if it doesn't exist
+(make-directory "~/.emacs/backups/" t)
+
+;; Set backup files to go there
+(setq backup-directory-alist
+      `(("." . "~/.emacs/backups/")))
+
+;; Set autosave files to go there
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs/backups/" t)))
+
+;; Optional: Keep versioned backups and don't litter folders
+(setq backup-by-copying t    ; Don’t clobber symlinks
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t)     ; Use versioned backups
+```
+
+# Replace `C-z` with `undo`
+
+Add this to init.el
+
+```
+;; Remap C-z to undo
+(global-set-key (kbd "C-z") 'undo)
 ```
 
 - [ ] Add Trilium
