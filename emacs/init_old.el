@@ -1,3 +1,6 @@
+;; Used for the OftenDeck
+;; Last Updated 2025.04.24
+
 ;; Melpa is installed so I can install plugins when necessary
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
