@@ -648,6 +648,34 @@ Add to init.el
       version-control t)     ; Use versioned backups
 ```
 
+# Add Symlinks to single config page:
+
+## Create config folder
+
+Make .config-oftendeck
+
+```
+cd
+sudo mkdir .oftendeck_config
+```
+
+inside, organize it with the following:
+
+.oftendeck_config/scripts/navigation
+.oftendeck_config/scripts/autologin
+.oftendeck_config/apps/emacs
+- init.el
+- yasnippets.el
+.oftendeck_config/apps/fbterm
+.oftendeck_config/tutorials/
+.oftendeck_config/developer/
+- remove symlinks
+- remove gitHub credentials
+- make image
+
+
+
+
 # Replace `C-z` with `undo`
 
 Add this to init.el
@@ -664,3 +692,4 @@ Add this to init.el
 - [X] change init.rc to have all backups save in ~/.emacs/backups/
 - [X] update tutorial
 - [X] In initrc, bind C-z with undo. (This is because I unbound C-z from `suspend to background`.
+
