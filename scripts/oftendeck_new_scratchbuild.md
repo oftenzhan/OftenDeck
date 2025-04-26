@@ -24,6 +24,20 @@ git clone https://github.com/oftenzhan/OftenDeck.git .oftendeck
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
 Note:
 
 When exporting, remove...
@@ -32,3 +46,4 @@ When exporting, remove...
 - WiFi credentials
 - Git Credentials
 - Authorized SSH
+```
