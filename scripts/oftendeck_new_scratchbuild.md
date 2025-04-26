@@ -4,5 +4,9 @@ Flash an SD card with raspberry pi OS lite.
 
 Let it run in Raspberry Pi.
 
+```
 sudo apt upgrade -y
 sudo apt update -y
+sudo apt autoremove -y
+sudo apt install git -y
+```
