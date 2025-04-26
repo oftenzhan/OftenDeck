@@ -26,4 +26,9 @@ git clone https://github.com/oftenzhan/OftenDeck.git .oftendeck
 
 Note:
 
-When exporting, remove private and public SSH key?
+When exporting, remove...
+- private and public SSH key
+- shell history
+- WiFi credentials
+- Git Credentials
+- Authorized SSH
