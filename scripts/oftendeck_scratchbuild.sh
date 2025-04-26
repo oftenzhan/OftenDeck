@@ -20,19 +20,23 @@ sudo apt install -y \
     cups
 
 echo "=== Making custom bin scripts executable ==="
-sudo chmod +x /home/oftendeck/.oftenconfig/scripts/bin/*
+sudo chmod +x ~/.oftenconfig/scripts/bin/*
 
 echo "=== Making profile.d scripts executable ==="
-sudo chmod +x /home/oftendeck/.oftenconfig/scripts/profile.d/*
+sudo chmod +x ~/.oftenconfig/scripts/profile.d/*
 
 echo "=== Symlinking custom scripts into /usr/local/bin ==="
-sudo ln -sf /home/oftendeck/.oftenconfig/scripts/bin/* /usr/local/bin/
+sudo ln -sf ~/.oftenconfig/scripts/bin/* /usr/local/bin/
 
 echo "=== Symlinking login scripts into /etc/profile.d ==="
-sudo ln -sf /home/oftendeck/.oftenconfig/scripts/profile.d/* /etc/profile.d/
+sudo ln -sf ~/.oftenconfig/scripts/profile.d/* /etc/profile.d/
 
 echo "=== Linking tutorial folder ==="
-mkdir -p /home/oftendeck/documents
-sudo ln -sf /home/oftendeck/.oftenconfig/tutorial/ /home/oftendeck/documents/tutorial/
+mkdir -p ~/documents
+sudo ln -sf ~/.oftenconfig/tutorial/ ~/documents/tutorial/
+
+echo "=== Linking emacs init ==="
+mkdir -p ~/.emacs/
+sudo ln -sf ~/.oftenconfig/.emacs/ ~/.emacs/
 
 echo "=== Setup complete ==="
