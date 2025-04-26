@@ -78,6 +78,20 @@ logo.nologo
 
 Removes the Raspberry Pi logo that’s usually shown at the top of the kernel.
 
+In the config.txt file, we can add the following:
+
+```
+disable_splash=1
+```
+
+This removes the rainbow screen shown by the GPU bootloader.
+
+```
+boot_delay=0
+```
+
+This will make it harder to get into recovery mode, as the window of opportunity is removed.
+
 ## Step 2: Install `image-utils`
 
 `image-utils` is a way to make image  backups for Raspberry Pi. This is both for you and for me. 
