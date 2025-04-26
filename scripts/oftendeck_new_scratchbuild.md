@@ -10,3 +10,5 @@ sudo apt update -y
 sudo apt autoremove -y
 sudo apt install git -y
 ```
+
+https://github.com/oftenzhan/OftenDeck
