@@ -1,19 +1,27 @@
 This is a complete remake of my Raspberry Pi OS for OftenDeck Ver 1.1. It uses an install script and symlinks to keep everything neat and organized together.
 
-# Flashing the SD Card
+## Flashing the SD Card
 
-Flash an SD card with raspberry pi OS lite. The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit screen rotation.
+Flash an SD card with raspberry pi OS lite. 
+
+## Screen Adjustments
+
+The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit screen rotation.
 
 - For Raspberry Pi 4, official 7" touch screen, and Smartipi case, no additional configuration is needed.
 - For Microjournal Rev.2.ReVamp, the following needs to be added to the `cmdline.txt`:
 
 ```
-
+video=HDMI-A-1:400x1280M@60,rotate=90 
 ```
 
-Plug it into Raspberry Pi. 
+## Install Git and download Repository
 
-### Enable and connect to Wifi
+Before installing the GitHub repository, we need to install the git app. 
+
+### Turn on Wifi
+
+Type the following into the terminal:
 
 ```
 sudo raspi-config
@@ -22,6 +30,8 @@ sudo raspi-config
 `1 System Options > S1 Wireless LAN`
 
 Go through and enter your SSID and password.
+
+Once you are connected to the internet, update, upgrade, and 
 
 ```
 sudo apt upgrade -y
