@@ -1,3 +1,5 @@
+# Introduction
+
 This document contains my notes and personal process for using OftenDeck within the writer’s workflow. While the OftenDeck project was built in a barebones style to support typing, spellcheck, print preview, and syncing, my own setup extends beyond the default features. For example, I installed Hugo to manage a blog, and I created custom templates geared toward sci-fi and fantasy writing. This document explains how I use OftenDeck across different stages of the writing process, tailored to my specific needs as a genre writer.
 
 ## Publishing
