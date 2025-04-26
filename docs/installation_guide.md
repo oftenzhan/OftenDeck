@@ -64,6 +64,20 @@ shutdown now
 
 Remember to click the off button switch to not drain the battery (if you are using battery).
 
+To skip the boot up rainbow screen, you can include this in your cmdline.txt.
+
+```
+loglevel=1 quiet
+```
+
+Quiet removes the output entirely. If quiet is removed, the terminal only shows critical and emergency notifications.
+
+```
+logo.nologo
+```
+
+Removes the Raspberry Pi logo that’s usually shown at the top of the kernel.
+
 ## Step 2: Install `image-utils`
 
 `image-utils` is a way to make image  backups for Raspberry Pi. This is both for you and for me. 
