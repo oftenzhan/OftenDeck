@@ -3,3 +3,6 @@ This is a complete remake of my Raspberry Pi OS for version 2. It uses an instal
 Flash an SD card with raspberry pi OS lite.
 
 Let it run in Raspberry Pi.
+
+sudo apt upgrade -y
+sudo apt update -y
