@@ -22,3 +22,8 @@ sudo apt install git -y
 cd
 git clone https://github.com/oftenzhan/OftenDeck.git .oftendeck
 ```
+
+
+Note:
+
+When exporting, remove private and public SSH key?
