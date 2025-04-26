@@ -79,8 +79,8 @@ git push
 The first time it commits, it will ask you for Author Identity Info. Put your Name and email address. 
 
 ```
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+git config --global user.name "Often Zhan"
+git config --global user.email "oftenzhan@gmail.com"
 ```
 
 
