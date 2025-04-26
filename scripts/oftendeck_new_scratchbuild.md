@@ -1,0 +1,1 @@
+This is a complete remake of my Raspberry Pi OS for version 2. It uses an install script.
