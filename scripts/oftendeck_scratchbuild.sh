@@ -39,7 +39,7 @@ echo "=== Linking emacs init ==="
 mkdir -p ~/.emacs/
 sudo ln -sf ~/.oftenconfig/.emacs/ ~/.emacs/
 
-# Clone and install image-utils
+echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
 sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 
