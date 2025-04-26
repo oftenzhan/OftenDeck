@@ -1,8 +1,17 @@
-This is a complete remake of my Raspberry Pi OS for version 2. It uses an install script.
+This is a complete remake of my Raspberry Pi OS for OftenDeck Ver 1.1. It uses an install script and symlinks to keep everything neat and organized together.
 
-Flash an SD card with raspberry pi OS lite.
+# Flashing the SD Card
 
-Let it run in Raspberry Pi. 
+Flash an SD card with raspberry pi OS lite. The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit screen rotation.
+
+- For Raspberry Pi 4, official 7" touch screen, and Smartipi case, no additional configuration is needed.
+- For Microjournal Rev.2.ReVamp, the following needs to be added to the `cmdline.txt`:
+
+```
+
+```
+
+Plug it into Raspberry Pi. 
 
 ### Enable and connect to Wifi
 
