@@ -78,6 +78,14 @@ git commit -m "Your commit message here"
 git push
 
 ```
+# Turn on TTY1 autologin.
+
+```
+sudo raspi-config
+```
+
+`1 System Options > S6 Auto Login > Yes`
+
 
 
 
