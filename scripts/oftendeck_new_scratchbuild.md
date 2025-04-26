@@ -78,6 +78,11 @@ git push
 
 The first time it commits, it will ask you for Author Identity Info. Put your Name and email address. 
 
+```
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+```
+
 
 # Turn on TTY1 autologin.
 
