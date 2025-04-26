@@ -49,7 +49,7 @@ git clone https://github.com/oftenzhan/OftenDeck.git .oftendeck
 create ssh key
 
 ```
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "oftendeck01"
 ```
 
 show ssh key
