@@ -10,10 +10,8 @@ The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit 
 
 - For Raspberry Pi 4, official 7" touch screen, and Smartipi case, no additional configuration is needed.
 - For Microjournal Rev.2.ReVamp, the following needs to be added to the `cmdline.txt`:
-
-```
-video=HDMI-A-1:400x1280M@60,rotate=90 
-```
+   - `video=HDMI-A-1:400x1280M@60,rotate=90 
+`
 
 ## Install Git and download Repository
 
