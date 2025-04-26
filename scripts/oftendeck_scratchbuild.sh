@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "=== Updating and upgrading system ==="
+echo "=== Updating & upgrading system ==="
 sudo apt update
 sudo apt upgrade -y
 sudo apt autoremove -y
