@@ -49,4 +49,14 @@ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 echo "=== Generate new SSH Key ==="
 ssh-keygen -t ed25519 -C "oftendeck01"
 
+echo "=== Generate default ~./fbtermrc ==="
+fbterm <<< 'exit'
+
+echo "=== Modify fbtermrc settings ==="
+sed -i \
+    -e 's/^font-names=.*/font-names=Terminus:style=Bold/' \
+    -e 's/^font-size=.*/font-size=40/' \
+    -e 's/^screen-rotate=.*/screen-rotate=3/' \
+    ~/.fbtermrc
+
 echo "=== Setup Complete ==="
