@@ -106,5 +106,24 @@ done
 
 echo "All listed services have been disabled."
 
+echo "=== Network-connect Syncthing
+
+# Start syncthing to generate the config file
+syncthing -no-browser &
+
+# Give it a moment to start up
+sleep 5
+
+# Stop syncthing after it's started
+pkill syncthing
+
+# Path to the syncthing config file
+config_file="$HOME/.config/syncthing/config.xml"
+
+# Use sed to replace localhost with 0.0.0.0 in the config file
+sed -i 's/localhost/0.0.0.0/' "$config_file"
+
+echo "Config file updated."
+
 
 echo "=== Setup Complete ==="
