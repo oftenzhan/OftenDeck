@@ -39,7 +39,7 @@ mkdir -p ~/documents/tutorials/
 sudo ln -sf ~/.oftendeck/tutorials/ ~/documents/tutorials/
 
 echo "=== Linking emacs init ==="
-mkdir -p ~/.emacs/
+mkdir -p ~/.emacs.d/
 sudo ln -sf ~/.oftendeck/.emacs.d/init.el ~/.emacs.d/init.el
 
 echo "=== Clone and install image-utils ==="
