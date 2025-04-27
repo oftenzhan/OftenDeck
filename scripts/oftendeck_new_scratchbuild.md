@@ -19,7 +19,7 @@ The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit 
 ### Run Script
 
 ```
-curl -sSL https://github.com/oftenzhan/OftenDeck/blob/main/scripts/oftendeck_scratchbuild.sh | bash
+curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oftendeck_scratchbuild.sh | bash
 ```
 ## Install Git and download Repository
 
