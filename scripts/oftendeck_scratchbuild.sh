@@ -74,4 +74,12 @@ done
 echo "=== Reloading systemd with autologin ==="
 systemctl daemon-reload
 
+echo "=== Setting $EDITOR as Emacs ==="
+
+# Add default editor settings to ~/.bashrc
+echo "" >> ~/.bashrc
+echo "# Set default editor to Emacs" >> ~/.bashrc
+echo 'export EDITOR="emacs"' >> ~/.bashrc
+echo 'export VISUAL="emacs"' >> ~/.bashrc
+
 echo "=== Setup Complete ==="
