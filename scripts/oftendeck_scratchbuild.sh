@@ -46,7 +46,7 @@ echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
 sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 
-echo "=== Generate new SSH Key ===
+echo === Generate new SSH Key ===
 ssh-keygen -t ed25519 -C "oftendeck01"
 
 echo "=== Setup Complete ==="
