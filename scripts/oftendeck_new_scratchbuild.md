@@ -12,7 +12,15 @@ The /boot/cmdline.txt and/or the /boot/config.txt May need to be changed to fit 
 - For Microjournal Rev.2.ReVamp, the following needs to be added to the `cmdline.txt`:
    - `video=HDMI-A-1:400x1280M@60,rotate=90 
 `
+## Run Install Script
 
+### Turn on Wifi
+
+### Run Script
+
+```
+curl -sSL https://github.com/oftenzhan/OftenDeck/blob/main/scripts/oftendeck_scratchbuild.sh | bash
+```
 ## Install Git and download Repository
 
 Before installing the GitHub repository, we need to install the git app. 
