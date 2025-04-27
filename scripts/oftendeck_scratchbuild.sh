@@ -49,4 +49,4 @@ sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 echo "=== Generate new SSH Key ===
 ssh-keygen -t ed25519 -C "oftendeck01"
 
-echo "=== Setup complete ==="
+echo "=== Setup Complete ==="
