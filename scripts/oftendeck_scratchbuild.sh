@@ -19,6 +19,9 @@ sudo apt install -y \
     xfonts-terminus \
     cups
 
+echo "=== Cloning GitHub repository ==="
+git clone https://github.com/oftenzhan/OftenDeck.git ~/.oftendeck
+
 echo "=== Making custom bin scripts executable ==="
 sudo chmod +x ~/.oftendeck/scripts/bin/*
 
