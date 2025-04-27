@@ -37,7 +37,7 @@ sudo ln -sf ~/.oftenconfig/tutorial/ ~/documents/tutorial/
 
 echo "=== Linking emacs init ==="
 mkdir -p ~/.emacs/
-sudo ln -sf ~/.oftenconfig/.emacs/ ~/.emacs/
+sudo ln -sf ~/.oftenconfig/.emacs/init.el ~/.emacs/init.el
 
 echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
