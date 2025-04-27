@@ -20,24 +20,24 @@ sudo apt install -y \
     cups
 
 echo "=== Making custom bin scripts executable ==="
-sudo chmod +x ~/.oftenconfig/scripts/bin/*
+sudo chmod +x ~/.oftendeck/scripts/bin/*
 
 echo "=== Making profile.d scripts executable ==="
-sudo chmod +x ~/.oftenconfig/scripts/profile.d/*
+sudo chmod +x ~/.oftendeck/scripts/profile.d/*
 
 echo "=== Symlinking custom scripts into /usr/local/bin ==="
-sudo ln -sf ~/.oftenconfig/scripts/bin/* /usr/local/bin/
+sudo ln -sf ~/.oftendeck/scripts/bin/* /usr/local/bin/
 
 echo "=== Symlinking login scripts into /etc/profile.d ==="
-sudo ln -sf ~/.oftenconfig/scripts/profile.d/* /etc/profile.d/
+sudo ln -sf ~/.oftendeck/scripts/profile.d/* /etc/profile.d/
 
 echo "=== Linking tutorial folder ==="
-mkdir -p ~/documents
-sudo ln -sf ~/.oftenconfig/tutorial/ ~/documents/tutorial/
+mkdir -p ~/documents/tutorials/
+sudo ln -sf ~/.oftendeck/tutorials/ ~/documents/tutorials/
 
 echo "=== Linking emacs init ==="
 mkdir -p ~/.emacs/
-sudo ln -sf ~/.oftenconfig/.emacs/init.el ~/.emacs/init.el
+sudo ln -sf ~/.oftendeck/.emacs.d/init.el ~/.emacs.d/init.el
 
 echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
