@@ -82,4 +82,29 @@ echo "# Set default editor to Emacs" >> ~/.bashrc
 echo 'export EDITOR="emacs"' >> ~/.bashrc
 echo 'export VISUAL="emacs"' >> ~/.bashrc
 
+echo "=== Disabling Services in Boot for Battery Saving Mode ==="
+
+# List of services to disable
+services=(
+  bluetooth
+  avahi-daemon
+  cron
+  ModemManager
+  NetworkManager
+  systemd-timesyncd
+  triggerhappy
+  wpa_supplicant
+  exim4
+  # nmbd
+  # smbd
+)
+
+for service in "${services[@]}"; do
+  echo "Disabling $service..."
+  sudo systemctl disable "$service" --now
+done
+
+echo "All listed services have been disabled."
+
+
 echo "=== Setup Complete ==="
