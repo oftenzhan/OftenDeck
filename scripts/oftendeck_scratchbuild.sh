@@ -128,4 +128,17 @@ sed -i '/<gui /,/<\/gui>/s/localhost/0.0.0.0/' "$config_file"
 
 echo "Config file updated."
 
+echo "=== Modify Cups for printing ===
+
+# Add current user to lpadmin group
+sudo usermod -aG lpadmin "$USER"
+
+# Allow remote administration, remote access, and printer sharing
+sudo cupsctl --remote-admin --remote-any --share-printers
+
+# Restart CUPS service
+sudo systemctl restart cups
+
+echo "CUPS is now configured for remote access and admin."
+
 echo "=== Setup Complete ==="
