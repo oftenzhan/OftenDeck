@@ -111,6 +111,9 @@ echo "=== Network-connect Syncthing
 # Start syncthing to generate the config file
 syncthing -no-browser &
 
+# Start syncthing to generate the config file
+syncthing -no-browser &
+
 # Give it a moment to start up
 sleep 5
 
@@ -120,10 +123,9 @@ pkill syncthing
 # Path to the syncthing config file
 config_file="$HOME/.config/syncthing/config.xml"
 
-# Use sed to replace localhost with 0.0.0.0 in the config file
-sed -i 's/localhost/0.0.0.0/' "$config_file"
+# Use sed to specifically change localhost to 0.0.0.0 within the <gui> section
+sed -i '/<gui /,/<\/gui>/s/localhost/0.0.0.0/' "$config_file"
 
 echo "Config file updated."
-
 
 echo "=== Setup Complete ==="
