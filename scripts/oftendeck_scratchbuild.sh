@@ -17,7 +17,8 @@ sudo apt install -y \
     fbi \
     fim \
     xfonts-terminus \
-    cups
+    cups \
+    pandoc
 
 echo "=== Cloning GitHub repository ==="
 git clone https://github.com/oftenzhan/OftenDeck.git ~/.oftendeck
