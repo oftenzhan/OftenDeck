@@ -120,8 +120,4 @@ sudo systemctl restart cups
 
 echo "CUPS is now configured for remote access and admin."
 
-echo "=== Generate new SSH Key ==="
-ssh-keygen -t ed25519 -C "oftendeck01" -N "" -f ~/.ssh/id_ed25519_oftendeck01
-echo "SSH key generated successfully!"
-
 echo "=== Setup Complete ==="
