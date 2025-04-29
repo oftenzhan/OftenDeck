@@ -52,8 +52,8 @@ fbterm <<< 'exit'
 echo "=== Modify fbtermrc settings ==="
 sed -i \
     -e 's/^font-names=.*/font-names=Terminus:style=Bold/' \
-    -e 's/^font-size=.*/font-size=40/' \
-    -e 's/^screen-rotate=.*/screen-rotate=3/' \
+    -e 's/^font-size=.*/font-size=20/' \
+    -e 's/^screen-rotate=.*/screen-rotate=0/' \
     ~/.fbtermrc
 
 echo "=== Setting $EDITOR as Emacs ==="
