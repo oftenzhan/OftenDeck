@@ -106,10 +106,7 @@ done
 
 echo "All listed services have been disabled."
 
-echo "=== Network-connect Syncthing
-
-# Start syncthing to generate the config file
-syncthing -no-browser &
+echo "=== Network-connect Syncthing"
 
 # Start syncthing to generate the config file
 syncthing -no-browser &
@@ -128,7 +125,7 @@ sed -i '/<gui /,/<\/gui>/s/localhost/0.0.0.0/' "$config_file"
 
 echo "Config file updated."
 
-echo "=== Modify Cups for printing ===
+echo "=== Modify Cups for printing ==="
 
 # Add current user to lpadmin group
 sudo usermod -aG lpadmin "$USER"
