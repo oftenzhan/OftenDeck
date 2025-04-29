@@ -102,7 +102,9 @@ sudo raspi-config
 
 
 
-
+```
+curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oftendeck_scratchbuild.sh | bash
+```
 
 
 
