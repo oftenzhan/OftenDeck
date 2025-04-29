@@ -46,9 +46,6 @@ echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
 sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 
-echo "=== Generate new SSH Key ==="
-ssh-keygen -t ed25519 -C "oftendeck01"
-
 echo "=== Generate default ~./fbtermrc ==="
 fbterm <<< 'exit'
 
@@ -137,5 +134,8 @@ sudo cupsctl --remote-admin --remote-any --share-printers
 sudo systemctl restart cups
 
 echo "CUPS is now configured for remote access and admin."
+
+echo "=== Generate new SSH Key ==="
+ssh-keygen -t ed25519 -C "oftendeck01"
 
 echo "=== Setup Complete ==="
