@@ -106,7 +106,7 @@ done
 
 echo "All listed services have been disabled."
 
-echo "=== Network-connect Syncthing"
+echo "=== Network-connect Syncthing ==="
 
 # Start syncthing to generate the config file
 syncthing -no-browser &
