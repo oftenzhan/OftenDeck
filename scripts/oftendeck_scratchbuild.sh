@@ -36,7 +36,7 @@ sudo ln -sf ~/.oftendeck/scripts/profile.d/* /etc/profile.d/
 
 echo "=== Linking tutorial folder ==="
 mkdir -p ~/documents/tutorials/
-sudo ln -sf ~/.oftendeck/tutorials/ ~/documents/tutorials/
+sudo ln -sf ~/.oftendeck/tutorials ~/documents/tutorials
 
 echo "=== Linking emacs init ==="
 mkdir -p ~/.emacs.d/
@@ -46,7 +46,7 @@ echo "=== Clone and install image-utils ==="
 git clone https://github.com/seamusdemora/RonR-RPi-image-utils.git ~/RonR-RPi-image-utils
 sudo install --mode=755 ~/RonR-RPi-image-utils/image-* /usr/local/sbin
 
-echo "=== Generate default ~./fbtermrc ==="
+echo "=== Generate default ~/.fbtermrc ==="
 fbterm <<< 'exit'
 
 echo "=== Modify fbtermrc settings ==="
