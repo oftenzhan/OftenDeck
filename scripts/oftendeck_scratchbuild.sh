@@ -141,4 +141,7 @@ mkdir -p ~/.ssh
 ssh-keygen -t ed25519 -C "oftendeck01" -N "" -f ~/.ssh/id_ed25519_oftendeck01
 echo "=== SSH key generated successfully! ==="
 
+echo "=== Giving fbterm permission to change keymap ==="
+sudo chmod u+s /usr/bin/fbterm
+
 echo "=== Setup Complete ==="
