@@ -1,4 +1,6 @@
-This is a complete remake of my Raspberry Pi OS for OftenDeck Ver 1.1. It uses an install script and symlinks to keep everything neat and organized together.
+Everytime I do a complete reinstall, I type through my process and try to make it simple (not only for myself, but also for people who want to install it on their own devices).
+
+The biggest updates from Version 
 
 ## Flashing the SD Card
 
