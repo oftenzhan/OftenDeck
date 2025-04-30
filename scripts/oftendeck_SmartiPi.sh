@@ -1,3 +1,4 @@
+#!/bin/bash
 
 echo "=== Appending to /boot/cmdline.txt ==="
 echo -n " loglevel=1 quiet logo.nologo" | sudo tee -a /boot/cmdline.txt > /dev/null
