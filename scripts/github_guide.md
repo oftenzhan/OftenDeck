@@ -36,3 +36,11 @@ The first time it commits, it will ask you for Author Identity Info. Put your Na
 git config --global user.name "Often Zhan"
 git config --global user.email "oftenzhan@gmail.com"
 ```
+
+When exporting, remove...
+- private and public SSH key
+- shell history
+- WiFi credentials
+- Git Credentials
+- Authorized SSH
+```
