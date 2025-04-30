@@ -38,113 +38,22 @@ To turn on Wifi, type into the terminal:
 ```
 sudo raspi-config
 ```
+And then navigate to Wifi and type in SSID and Password.
 
-And then navigate to Enable Wifi.
-
-
-
-
-### Turn on Wifi
+```
+1 System Options → S1 Wireless LAN → Country → Type in Wifi Name → Type in Wifi Password
+```
+Afterwards, you can exit `raspi-config`.
 
 ### Run Script
 
-```
-curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oftendeck_scratchbuild.sh | bash
-```
-## Install Git and download Repository
-
-Before installing the GitHub repository, we need to install the git app. 
-
-### Turn on Wifi
-
-Type the following into the terminal:
-
-```
-sudo raspi-config
-```
-
-`1 System Options > S1 Wireless LAN`
-
-Go through and enter your SSID and password.
-
-Once you are connected to the internet, update, upgrade, and 
-
-```
-sudo apt upgrade -y
-sudo apt update -y
-sudo apt autoremove -y
-sudo apt install git -y
-```
-
-### Download and Install OftenDeck GitHub page.
-```
-cd
-git clone https://github.com/oftenzhan/OftenDeck.git .oftendeck
-```
-
-### (For developers)
-
-create ssh key
-
-```
-ssh-keygen -t ed25519 -C "oftendeck01"
-```
-
-show ssh key
-
-```
-cat ~/.ssh/id_ed25519.pub
-```
-
-copy to GitHub account under Settings > SSH keys
-
-change repo to use ssh instead of https
-
-```
-cd /path/to/your/repo
-git remote set-url origin git@github.com:oftenzhan/OftenDeck.git
-
-```
-
-push with this
-
-```
-git add .
-git commit -m "Your commit message here"
-git push
-```
-
-The first time it commits, it will ask you for Author Identity Info. Put your Name and email address. 
-
-```
-git config --global user.name "Often Zhan"
-git config --global user.email "oftenzhan@gmail.com"
-```
-
-
-# Turn on TTY1 autologin.
-
-```
-sudo raspi-config
-```
-
-`1 System Options > S6 Auto Login > Yes`
-
-
+Go to the terminal and type:
 
 ```
 curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oftendeck_scratchbuild.sh | bash
 ```
 
-
-
-
-
-
-
-
-
-
+It should take an hour to download. Hopefully it doesn't spout any errors. If it does, let me know, and do it manually step-by-step using the [detailed build guide](detailed_build.md).
 
 ```
 Note:
