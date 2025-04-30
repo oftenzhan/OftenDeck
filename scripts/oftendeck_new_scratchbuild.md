@@ -55,4 +55,3 @@ curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oft
 
 It should take an hour to download. Hopefully it doesn't spout any errors. If it does, let me know, and do it manually step-by-step using the [detailed build guide](detailed_build.md).
 
-```
