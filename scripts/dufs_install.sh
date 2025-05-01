@@ -21,7 +21,7 @@ fi
 
 # Step 4: Install Dufs without prompts
 echo "Installing Dufs (this may take a long time)..."
-cargo install dufs --quiet
+cargo install dufs
 
 # Step 5: Confirm Dufs installed
 if command -v dufs &> /dev/null; then
