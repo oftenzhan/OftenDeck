@@ -145,4 +145,28 @@ echo "=== SSH key generated successfully! ==="
 echo "=== Giving fbterm permission to change keymap ==="
 sudo chmod u+s /usr/bin/fbterm
 
+echo "=== Starting Dufs installation script ==="
+
+echo "Installing Rust with default settings..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+echo "Loading Cargo environment..."
+source "$HOME/.cargo/env"
+
+if ! command -v cargo &> /dev/null; then
+    echo "Cargo could not be found. Rust installation may have failed."
+    exit 1
+fi
+
+echo "Installing Dufs (this may take a long time)..."
+cargo install dufs
+
+if command -v dufs &> /dev/null; then
+    echo "Dufs installed successfully!"
+    dufs --version
+else
+    echo "Dufs installation failed."
+    exit 1
+fi
+
 echo "=== Setup Complete ==="
