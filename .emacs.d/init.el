@@ -9,9 +9,9 @@
 ;;  saves backups and autosave files in `.emacs.d/backups/`
 (make-directory "~/.emacs.d/backups/" t)
 (setq backup-directory-alist
-      `(("." . "~/.emacs/backups/")))
+      `(("." . "~/.emacs.d/backups/")))
 (setq auto-save-file-name-transforms
-      `((".*" "~/.emacs/backups/" t)))
+      `((".*" "~/.emacs.d/backups/" t)))
 
 ;; Disabled Suspend
 (global-unset-key (kbd "C-z"))
