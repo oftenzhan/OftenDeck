@@ -13,6 +13,7 @@
 
 ;; Disabled Suspend
 (global-unset-key (kbd "C-z"))
+(global-set-key (kbd "C-z") 'undo)
 (global-unset-key (kbd "C-x C-z"))
 
 ;; The side knob buttons of the microjournal were set to <f9> and <f8> using Vial. This binds them to Emacs for navigating buffers and screens.
