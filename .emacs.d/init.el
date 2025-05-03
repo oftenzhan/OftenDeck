@@ -71,3 +71,10 @@
 		" | Words: "
 		(:eval (format "%d" (count-words (point-min) (point-max))))
 		mode-line-end-spaces))
+
+;; Enable Print Preview
+(defun run-print-preview ()
+  "Run the framebuffer-based print-preview script."
+  (interactive)
+  (start-process "print-preview" nil "/usr/local/bin/print-preview"))
+(global-set-key (kbd "C-c C-p") 'run-print-preview)
