@@ -1,5 +1,5 @@
 #!/bin/bash
-# often-export — Export and optionally sanitize Raspberry Pi image
+# often-export — Export and Sanitize
 # Last updated: 2025.05.03
 
 set -euo pipefail
