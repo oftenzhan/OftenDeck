@@ -98,9 +98,11 @@ show_sharing() {
 
 # Function to display Battery Saving Mode sub-menu
 show_battery_menu() {
-  BATTERY_CHOICE=$(whiptail --title "Battery Saving Mode" --menu "By default, Battery Saving Mode is turned on at boot." $TERMINAL_HEIGHT $TERMINAL_WIDTH 2 \
-    "Turn Off" "(Turn Off Battery Saving Mode)" \
-    "Turn On" "(Reenable Battery Saving Mode)" \
+  BATTERY_CHOICE=$(whiptail --title "Battery Saving Mode" --menu "Battery Saving Mode disables WiFi, Bluetooth, and background services to extend battery life." $TERMINAL_HEIGHT $TERMINAL_WIDTH 4 \
+    "Turn Off" "(Temporarily turn off Battery Saving Mode)" \
+    "Turn On" "(Temporarily turn on Battery Saving Mode)" \
+    "Disable at Boot" "(Prevent Battery Saving Mode from starting at boot)" \
+    "Enable at Boot" "(Set Battery Saving Mode to start at boot)" \
     --ok-button "Select" --cancel-button "Back" 3>&1 1>&2 2>&3)
 
   if [ $? -ne 0 ]; then
@@ -113,6 +115,12 @@ show_battery_menu() {
       ;;
     "Turn On")
       /usr/local/bin/often-battery-mode-on
+      ;;
+    "Disable at Boot")
+      /usr/local/bin/often-battery-mode-disable
+      ;;
+    "Enable at Boot")
+      /usr/local/bin/often-battery-mode-enable
       ;;
     *)
       echo "Invalid option"
