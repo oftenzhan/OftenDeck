@@ -1,5 +1,5 @@
 #!/bin/bash
-# often-export — Export and Sanitize
+# often-export — Export and optionally sanitize Raspberry Pi image
 # Last updated: 2025.05.03
 
 set -euo pipefail
@@ -29,8 +29,12 @@ done
 
 # Prompt user if -n flag was not given
 if [ "$no_share" = false ]; then
+  echo
+  echo "This script can remove personal data (like Wi-Fi settings and SSH keys) to make the image safe to share."
+  echo "If you press Enter without typing 'y', it will default to NO and keep everything as-is."
   read -p "Will this image be shared with others? [y/N]: " share
-  share=${share,,}
+  echo
+  share=${share,,}  # convert to lowercase
   if [[ "$share" != "y" ]]; then
     no_share=true
   fi
@@ -80,4 +84,5 @@ fi
 echo "Step 10: Shrinking image..."
 sudo image-shrink "$img"
 
-echo "Image export complete: $img"
+echo
+echo "Export complete: $img"
