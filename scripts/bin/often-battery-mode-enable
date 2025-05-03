@@ -1,0 +1,25 @@
+#!/bin/bash
+# Used for OftenDeck. Last updated 2025.04.24
+
+echo "Enabling battery saving mode..."
+
+SERVICES=(
+  bluetooth
+  avahi-daemon
+  cron
+  ModemManager
+  NetworkManager
+#  nmbd
+#  smbd
+  systemd-timesyncd
+  triggerhappy
+  wpa_supplicant
+  exim4
+)
+
+for S in "${SERVICES[@]}"; do
+  echo "Starting $S..."
+  sudo systemctl disable "$S"
+done
+
+echo "Battery saving mode will automatically be enabled at boot."
