@@ -1,14 +1,83 @@
 #!/bin/bash
-# Used for OftenDeck. Last updated 2025.04.24
+# often-export — Export and optionally sanitize Raspberry Pi image
+# Last updated: 2025.05.03
 
-# Get the current date in YYYYMMDD format
+set -euo pipefail
+
+# Date stamp
 today=$(date +%Y%m%d)
 
-# Define the path once
-img="/mnt/backups/oftendeck${today}.img"
+# Paths
+backup_dir="/mnt/backups"
+img="${backup_dir}/oftendeck${today}.img"
+mnt="/mnt/oftendeckmnt"
 
-# Step 1: Create the backup image
+# Parse flags
+no_share=false
+while getopts ":n" opt; do
+  case ${opt} in
+    n )
+      no_share=true
+      ;;
+    \? )
+      echo "Usage: $0 [-n]"
+      echo "  -n    Skip sharing prompt and keep personal data"
+      exit 1
+      ;;
+  esac
+done
+
+# Prompt user if -n flag was not given
+if [ "$no_share" = false ]; then
+  read -p "Will this image be shared with others? [y/N]: " share
+  share=${share,,}
+  if [[ "$share" != "y" ]]; then
+    no_share=true
+  fi
+fi
+
+echo "Step 0: Preparing environment..."
+sudo mkdir -p "$backup_dir"
+sudo mkdir -p "$mnt"
+
+echo "Step 1: Creating backup image at $img..."
 sudo image-backup --initial "$img"
 
-# Step 2: Shrink the same image
+if [ "$no_share" = false ]; then
+  echo "Step 2: Mounting image for sanitization..."
+  loopdev=$(sudo losetup -fP --show "$img")
+  rootpart="${loopdev}p2"
+  sudo mount "$rootpart" "$mnt"
+
+  echo "Step 3: Removing Wi-Fi configuration..."
+  sudo rm -f "$mnt/etc/wpa_supplicant/wpa_supplicant.conf"
+
+  echo "Step 4: Removing SSH host keys..."
+  sudo rm -f "$mnt/etc/ssh/ssh_host_"*
+
+  echo "Step 5: Removing user SSH authorized_keys..."
+  sudo rm -f "$mnt/home/"*/.ssh/authorized_keys 2>/dev/null || true
+  sudo rm -rf "$mnt/root/.ssh" 2>/dev/null || true
+
+  echo "Step 6: Clearing shell history..."
+  sudo find "$mnt/home" -name ".bash_history" -delete
+  sudo rm -f "$mnt/root/.bash_history"
+
+  echo "Step 7: Truncating log files..."
+  sudo find "$mnt/var/log" -type f -exec truncate -s 0 {} +
+
+  echo "Step 8: Clearing machine ID..."
+  sudo truncate -s 0 "$mnt/etc/machine-id"
+
+  echo "Step 9: Unmounting and cleaning up..."
+  sudo umount "$mnt"
+  sudo losetup -d "$loopdev"
+  sudo rmdir "$mnt"
+else
+  echo "Skipping sanitization — image will retain all configuration and identity files."
+fi
+
+echo "Step 10: Shrinking image..."
 sudo image-shrink "$img"
+
+echo "Image export complete: $img"
