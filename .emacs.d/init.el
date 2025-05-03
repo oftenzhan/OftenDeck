@@ -6,10 +6,12 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; Personally, I do not like autosave nor lockfiles. I disabled them.
-(setq auto-save-default nil)
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
+;;  saves backups and autosave files in `.emacs.d/backups/`
+(make-directory "~/.emacs.d/backups/" t)
+(setq backup-directory-alist
+      `(("." . "~/.emacs/backups/")))
+(setq auto-save-file-name-transforms
+      `((".*" "~/.emacs/backups/" t)))
 
 ;; Disabled Suspend
 (global-unset-key (kbd "C-z"))
