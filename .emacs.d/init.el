@@ -1,12 +1,12 @@
 ;; Used for the OftenDeck
 ;; Last Updated 2025.04.24
 
-;; Melpa is installed so I can install plugins when necessary
+;; Melpa is included to install plugins
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;; Saves Backups & Autosave files in `~/.emacs.d/backups/`
+;; Backups & Autosave saved `~/.emacs.d/backups/`
 (make-directory "~/.emacs.d/backups/" t)
 (setq backup-directory-alist
       `(("." . "~/.emacs.d/backups/")))
@@ -16,13 +16,16 @@
 ;; Disabled Suspend
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "C-z") 'undo)
+
+;; `C-z` is bound to Undo
 (global-unset-key (kbd "C-x C-z"))
 
-;; The side knob buttons of the microjournal were set to <f9> and <f8> using Vial. This binds them to Emacs for navigating buffers and screens.
+;; Etch A Sketch navigation for Two-knob Keyboard
+;; The <f5> and <f6> must be set in Vial
 (global-set-key (kbd "<f5>") 'other-window)
 (global-set-key (kbd "<f6>") 'previous-buffer)
 
-;; This function makes all documents wordwrap.
+;; Makes ALL documents word-wrap.
 (global-visual-line-mode 1)
 
 ;; I removed the menu-bar because it is rarely used.
@@ -60,6 +63,7 @@
 ;; Remove ALL horizontal screen splits
 (setq split-window-preferred-function nil)
 
+;; Mode-line to only display Filename & Word Count
 (setq-default mode-line-format
 	      '("%e"
 		mode-line-front-space
