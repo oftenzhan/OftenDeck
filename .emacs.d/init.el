@@ -6,7 +6,7 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 
-;;  saves backups and autosave files in `.emacs.d/backups/`
+;;  saves backups & autosave files in `~/.emacs.d/backups/`
 (make-directory "~/.emacs.d/backups/" t)
 (setq backup-directory-alist
       `(("." . "~/.emacs.d/backups/")))
