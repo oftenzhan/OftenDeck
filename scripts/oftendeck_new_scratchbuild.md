@@ -55,7 +55,11 @@ Go to the terminal and type:
 curl -sSL https://raw.githubusercontent.com/oftenzhan/OftenDeck/main/scripts/oftendeck_scratchbuild.sh | bash
 ```
 
-After download in executing, it takes 35 minutes to an hour to fully run. Hopefully it doesn't spout any errors. If it does, let me know, and install it manually step-by-step using the [detailed build guide](detailed_build.md). Let me know what the error was so I can fix it.
+After download in executing, it takes 35 minutes to an hour to fully run. Hopefully it doesn't spout any errors. 
+
+Near the very end, it seems like it is stuck, saying something like "Installing 186 of 187" and will stay there for a couple of minutes. It is not stuck, this last step just takes the longest.
+
+If it breaks for some reason, please let me know. You'll probably need to install it manually step-by-step using the [detailed build guide](detailed_build.md). Let me know what the error was so I can fix it.
 
 
 # Set 4. Run Specific Device Script
