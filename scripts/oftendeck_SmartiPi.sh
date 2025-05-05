@@ -2,7 +2,7 @@
 
 echo "=== Appending to /boot/firmware/cmdline.txt ==="
 
-echo -n " loglevel=1 quiet logo.nologo" | sudo tee -a /boot/firmware/cmdline.txt > /dev/null
+echo "$(cat /boot/firmware/cmdline.txt) loglevel=1 quiet logo.nologo" | sudo tee /boot/firmware/cmdline.txt > /dev/null
 
 echo "=== Appending to /boot/firmware/config.txt ==="
 
