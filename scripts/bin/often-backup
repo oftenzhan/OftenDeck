@@ -80,8 +80,5 @@ else
   echo "Skipping sanitization — image will retain all configuration and identity files."
 fi
 
-echo "Step 10: Shrinking image..."
-sudo image-shrink "$img" 0
-
 echo
 echo "Export complete: $img"
