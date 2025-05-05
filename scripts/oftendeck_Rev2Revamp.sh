@@ -10,7 +10,7 @@ sed -i "s/^screen-rotate=.*/screen-rotate=0/" "$HOME/.fbtermrc"
 
 echo "=== Appending to /boot/cmdline.txt ==="
 
-echo -n " loglevel=1 quiet logo.nologo" | sudo tee -a /boot/cmdline.txt > /dev/null
+echo "$(cat /boot/firmware/cmdline.txt) loglevel=1 quiet logo.nologo" | sudo tee /boot/firmware/cmdline.txt > /dev/null
 
 echo "=== Appending to /boot/config.txt ==="
 
