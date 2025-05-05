@@ -36,8 +36,8 @@ echo "=== Symlinking login scripts into /etc/profile.d ==="
 sudo ln -sf ~/.oftendeck/scripts/profile.d/* /etc/profile.d/
 
 echo "=== Linking tutorial folder ==="
-mkdir -p ~/documents/tutorials/
-sudo ln -sf ~/.oftendeck/tutorials ~/documents/tutorials
+mkdir -p ~/documents
+ln -sf ~/.oftendeck/tutorials ~/documents/tutorials
 
 echo "=== Linking emacs init ==="
 mkdir -p ~/.emacs.d/
