@@ -81,7 +81,7 @@ else
 fi
 
 echo "Step 10: Shrinking image..."
-sudo image-shrink "$img"
+sudo image-shrink "$img" 0
 
 echo
 echo "Export complete: $img"
