@@ -11,7 +11,7 @@ test -d "$DIR" || exit 1
 trap "rm -rf $DIR" EXIT
 
 # Default options
-device="png16m"
+device="pngalpha -r300"
 
 # Check if file argument is provided
 if [ ! -f "$1" ]; then
