@@ -118,3 +118,18 @@
                pdf-file)))))
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
+
+(defun print-associated-pdf ()
+  "Prompt for a printer and print the PDF version of the current Markdown file."
+  (interactive)
+  (when-let ((md-file (buffer-file-name)))
+    (let* ((pdf-file (concat (file-name-sans-extension md-file) ".pdf"))
+           (printers (split-string (shell-command-to-string "lpstat -p | awk '{print $2}'") "\n" t))
+           (printer (completing-read "Choose printer: " printers)))
+      (if (file-exists-p pdf-file)
+          (progn
+            (shell-command (format "lp -d %s %s" printer pdf-file))
+            (message "Sent %s to printer %s" pdf-file printer))
+        (message "PDF file not found: %s" pdf-file)))))
+
+(global-set-key (kbd "C-c P") 'print-associated-pdf)
