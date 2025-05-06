@@ -104,6 +104,7 @@ If someone knows how to rotate the framebuffer on the WiseCoCo 7.84, it would sa
 
 ```
 sudo apt install texlive-latex-recommended
+sudo apt install kbd
 ```
 # To Do:
 - Add print functionalities to emacs
