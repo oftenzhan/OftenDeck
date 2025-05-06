@@ -105,16 +105,17 @@ If someone knows how to rotate the framebuffer on the WiseCoCo 7.84, it would sa
 ```
 sudo apt install texlive-latex-recommended
 ```
-To Do:
+# To Do:
 - Add print functionalities to emacs
    - print preview
    - print using CUPS
       - Prompt, which printer do you want to print with?
 
-- Change opening to Journal.md file.
+- Change startup to Journal.md file.
 - Link my files to private repository.
 - fix FIM with different keybindings consistent with the rest of the OftenDeck
-- fix dials on mechanical keyboards
+- fix dials on mechanical keyboards (q15 max)
+- connect to GitHub to push personal documents to private repository.
 
 
 
