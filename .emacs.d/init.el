@@ -1,9 +1,9 @@
 ;; Used for the OftenDeck
 ;; Last Updated 2025.04.24
 
-;;; ───────────────────────────────────
+;;; ---
 ;;; Package Initialization and Management
-;;; ───────────────────────────────────
+;;; ---
 
 (require 'package)
 (setq package-archives '(("melpa" . "https://melpa.org/packages/")
@@ -19,9 +19,9 @@
 (require 'use-package)
 (setq use-package-always-ensure t)
 
-;;; ───────────────────────────────────
+;;; ---
 ;;; Package Configurations
-;;; ───────────────────────────────────
+;;; ---
 
 (use-package bind-key)
 (use-package imenu-list)
@@ -32,9 +32,9 @@
 (use-package evil
   :defer t) ; installed but not enabled at startup
 
-;;; ───────────────────────────────────
-;;; General UI and Behavior Customizations
-;;; ───────────────────────────────────
+;;; ---
+;;; General UI & Behavior Customizations
+;;; ---
 
 ;; Backups & Autosave saved to `~/.emacs.d/backups/`
 (make-directory "~/.emacs.d/backups/" t)
@@ -62,9 +62,9 @@
                 (:eval (format "%d" (count-words (point-min) (point-max))))
                 mode-line-end-spaces))
 
-;;; ───────────────────────────────────
+;;; ---
 ;;; Keybindings and Navigation
-;;; ───────────────────────────────────
+;;; ---
 
 ;; Disable `C-z` suspend, remap to undo
 (global-unset-key (kbd "C-z"))
@@ -79,9 +79,9 @@
 (global-set-key (kbd "<f17>") 'dired-sidebar-toggle-sidebar)
 (global-set-key (kbd "<f18>") 'imenu-list-smart-toggle)
 
-;;; ───────────────────────────────────
+;;; ---
 ;;; Spellcheck Configuration (Hunspell)
-;;; ───────────────────────────────────
+;;; ---
 
 (setq ispell-program-name "hunspell")
 (setq ispell-dictionary "en_US")
@@ -98,16 +98,19 @@
 (with-eval-after-load 'flyspell
   (define-key flyspell-mode-map (kbd "M-;") 'flyspell-auto-correct-previous-word))
 
-;;; ───────────────────────────────────
+;;; ---
 ;;; Miscellaneous Features
-;;; ───────────────────────────────────
+;;; ---
 
 ;; Enable repeat-mode
 (repeat-mode 1)
 
 ;; Print preview binding
-(defun run-print-preview ()
-  "Run the framebuffer-based print-preview script."
+(defun md-preview-with-fbgs ()
+  "Convert the current Markdown file to PDF using pandoc, then open it with fbgs."
   (interactive)
-  (start-process "print-preview" nil "/usr/local/bin/print-preview"))
-(global-set-key (kbd "C-c C-p") 'run-print-preview)
+  (when-let ((md-file (buffer-file-name)))
+    (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
+      (save-buffer)
+      (shell-command (format "pandoc %s -o %s" md-file pdf-file))
+      (start-process "often-fimgs" nil "oftenfimgs" pdf-file))))
