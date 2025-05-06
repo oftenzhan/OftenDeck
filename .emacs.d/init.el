@@ -112,7 +112,9 @@
   (when-let ((md-file (buffer-file-name)))
     (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
       (save-buffer)
-      (shell-command (format "pandoc %s -o %s" md-file pdf-file))
-      (shell-command (format "openvt -c 6 -sw often-fimgs %s" pdf-file)))))
+      ;; Ensure `sudo openvt` runs without requiring a password
+      (shell-command
+       (format "pandoc %s -o %s && sudo openvt -c 6 -sw -- often-fimgs %s"
+               md-file pdf-file pdf-file)))))
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
