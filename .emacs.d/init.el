@@ -107,14 +107,14 @@
 
 ;; Print preview binding
 (defun md-preview-with-fbgs ()
-  "Convert the current Markdown file to PDF using pandoc, then open it with often-fimgs in TTY6."
+  "Convert the current Markdown file to PDF using pandoc, then open it with often-fimgs in tty7."
   (interactive)
   (when-let ((md-file (buffer-file-name)))
     (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
       (save-buffer)
-      ;; Ensure `sudo openvt` runs without requiring a password
+      ;; Create tty7, run often-fimgs, then kill tty7 after use
       (shell-command
-       (format "pandoc %s -o %s && sudo openvt -c 6 -sw -- often-fimgs %s"
-               md-file pdf-file pdf-file)))))
+       (format "sudo openvt -c 7 -sw -- often-fimgs %s && sudo kill -9 $(ps aux | grep tty7 | awk '{print $2}')"
+               pdf-file)))))
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
