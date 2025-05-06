@@ -107,13 +107,12 @@
 
 ;; Print preview binding
 (defun md-preview-with-fbgs ()
-  "Convert the current Markdown file to PDF using pandoc, then open it with often-fimgs and wait until it closes."
+  "Convert the current Markdown file to PDF using pandoc, then open it with often-fimgs in TTY6."
   (interactive)
   (when-let ((md-file (buffer-file-name)))
     (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
       (save-buffer)
       (shell-command (format "pandoc %s -o %s" md-file pdf-file))
-      ;; Run often-fimgs and wait until it exits
-      (call-process "often-fimgs" nil nil nil pdf-file))))
+      (shell-command (format "openvt -c 6 -sw often-fimgs %s" pdf-file)))))
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
