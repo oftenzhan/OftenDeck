@@ -100,6 +100,14 @@ In `fbgs`, I had to rewrite the script to make ghostscript generate the PNG imag
 If someone knows how to rotate the framebuffer on the WiseCoCo 7.84, it would save me a lot of heartache.
 
 
+# Included
+
+```
+sudo apt install texlive-latex-recommended
+```
+
+
+
 
 
 
