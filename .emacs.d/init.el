@@ -124,8 +124,13 @@
   (interactive)
   (when-let ((md-file (buffer-file-name)))
     (let* ((pdf-file (concat (file-name-sans-extension md-file) ".pdf"))
+           ;; Capture printers list from lpstat
            (printers (split-string (shell-command-to-string "lpstat -p | awk '{print $2}'") "\n" t))
-           (printer (completing-read "Choose printer: " printers)))
+           ;; Debug: Print the list of printers to ensure they are captured correctly
+           (printers-debug (mapconcat 'identity printers ", "))  ;; Join list elements into a string
+           (printer (progn
+                      (message "Available printers: %s" printers-debug)  ;; Debugging line
+                      (completing-read "Choose printer: " printers nil t))))
       (if (file-exists-p pdf-file)
           (progn
             (shell-command (format "lp -d %s %s" printer pdf-file))
