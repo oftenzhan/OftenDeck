@@ -113,4 +113,6 @@
     (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
       (save-buffer)
       (shell-command (format "pandoc %s -o %s" md-file pdf-file))
-      (start-process "often-fimgs" nil "oftenfimgs" pdf-file))))
+      (start-process "often-fimgs" nil "often-fimgs" pdf-file))))
+
+(global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
