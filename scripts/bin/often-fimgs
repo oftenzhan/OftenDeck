@@ -37,4 +37,4 @@ if [ "$pages" -eq "0" ]; then
 fi
 
 # Use FIM to display the converted images
-fim -q -C 'g:_orientation=0' $DIR/ps*.png
+fim -q -w -C 'g:_orientation=0' $DIR/ps*.png
