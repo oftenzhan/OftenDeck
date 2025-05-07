@@ -15,6 +15,7 @@ SERVICES=(
   triggerhappy
   wpa_supplicant
   exim4
+  cups
 )
 
 for S in "${SERVICES[@]}"; do
