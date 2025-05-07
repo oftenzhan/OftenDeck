@@ -111,17 +111,13 @@
   (when-let ((md-file (buffer-file-name)))
     (let ((pdf-file (concat (file-name-sans-extension md-file) ".pdf")))
       (save-buffer)
-      ;; Change to the directory of the markdown file before running pandoc
-      (let ((default-directory (file-name-directory md-file)))
-        (let ((output (shell-command-to-string (format "pandoc %s -o %s 2>&1" md-file pdf-file))))
-          (if (string-match "error" output)
-              (message "Error generating PDF: %s" output)
-            (progn
-              (message "PDF created: %s" pdf-file)
-              ;; Create tty7, run often-fimgs, then kill tty7 after use
-              (shell-command
-               (format "sudo openvt -c 7 -sw -- often-fimgs %s && sudo kill -9 $(ps aux | grep tty7 | awk '{print $2}')"
-                       pdf-file))))))))
+      ;; Debugging output to check the command being run
+      (message "Running pandoc command: pandoc %s -o %s" md-file pdf-file)
+      (shell-command (format "pandoc %s -o %s" md-file pdf-file))
+      ;; Create tty7, run often-fimgs, then kill tty7 after use
+      (shell-command
+       (format "sudo openvt -c 7 -sw -- often-fimgs %s && sudo kill -9 $(ps aux | grep tty7 | awk '{print $2}')"
+               pdf-file)))))
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
 
