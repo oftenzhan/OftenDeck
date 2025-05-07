@@ -18,6 +18,8 @@ sudo apt install -y \
     fim \
     xfonts-terminus \
     cups \
+    kbd \
+    texlive-latex-recommended \
     pandoc
 
 echo "=== Cloning GitHub repository ==="
