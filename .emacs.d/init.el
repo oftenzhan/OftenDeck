@@ -135,20 +135,3 @@
         (message "PDF file not found: %s" pdf-file)))))
 
 (global-set-key (kbd "C-c P") 'print-associated-pdf)
-
-(require 'dired-x)
-
-(setq dired-omit-files
-      (rx (or
-           (seq bol ".")                    ; Hidden files and folders
-           (not (or
-                 (seq "." (or "md" "org") eol) ; .md and .org files
-                 )))))
-
-(add-hook 'dired-mode-hook
-          (lambda ()
-            (dired-omit-mode 1)))
-
-(add-hook 'dired-sidebar-mode-hook
-          (lambda ()
-            (dired-omit-mode 1)))
