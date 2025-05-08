@@ -148,3 +148,7 @@
 (add-hook 'dired-mode-hook
           (lambda ()
             (dired-omit-mode 1)))
+
+(add-hook 'dired-sidebar-mode-hook
+          (lambda ()
+            (dired-omit-mode 1)))
