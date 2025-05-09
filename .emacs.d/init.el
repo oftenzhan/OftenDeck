@@ -137,6 +137,3 @@
         (message "PDF file not found: %s" pdf-file)))))
 
 (global-set-key (kbd "C-c P") 'print-associated-pdf)
-
-;;; Fix Annoying Bullet Point for Lists
-(add-hook 'markdown-mode-hook #'org-autolist-mode)
