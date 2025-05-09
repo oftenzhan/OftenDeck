@@ -105,6 +105,7 @@
 ;; Enable repeat-mode
 (repeat-mode 1)
 
+;;; Makes PDF and previews it
 (defun md-preview-with-fbgs ()
   "Convert the current Markdown file to PDF using pandoc, then open it with often-fimgs in tty7."
   (interactive)
@@ -121,6 +122,7 @@
 
 (global-set-key (kbd "C-c p") 'md-preview-with-fbgs)
 
+;;; Prints Using Cups with Printer Prompt
 (defun print-associated-pdf ()
   "Prompt for a printer and print the PDF version of the current Markdown file."
   (interactive)
@@ -135,3 +137,6 @@
         (message "PDF file not found: %s" pdf-file)))))
 
 (global-set-key (kbd "C-c P") 'print-associated-pdf)
+
+;;; Fix Annoying Bullet Point for Lists
+(add-hook 'markdown-mode-hook #'org-autolist-mode)
