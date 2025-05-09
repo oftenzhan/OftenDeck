@@ -118,6 +118,11 @@ sudo apt install kbd
 - fix dials on mechanical keyboards (q15 max)
 - connect to GitHub to push personal documents to private repository.
 
+# Added
+
+emacs package: org-autolist
+
+
 
 
 
