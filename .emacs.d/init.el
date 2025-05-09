@@ -137,3 +137,17 @@
         (message "PDF file not found: %s" pdf-file)))))
 
 (global-set-key (kbd "C-c P") 'print-associated-pdf)
+
+
+;;; Replace M-RET to RET within-in a list 
+
+(defun my/markdown-smart-ret ()
+  "If point is in a list item, insert new item (like M-RET); otherwise, do normal RET."
+  (interactive)
+  (if (markdown-list-item-at-point)
+      (markdown-insert-list-item)
+    (call-interactively (key-binding (kbd "RET")))))
+
+(add-hook 'markdown-mode-hook
+          (lambda ()
+            (local-set-key (kbd "RET") #'my/markdown-smart-ret)))
