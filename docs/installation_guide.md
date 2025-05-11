@@ -1,6 +1,6 @@
 # Introduction
 
-currenty, the OftenDeck is at Version 1.1. The biggest updates from Version 1.0 and 1.1 is the use of symlinks and shell scripts.
+Currenty, the OftenDeck is at Version 1.1. The biggest updates from Version 1.0 and 1.1 is the use of symlinks and shell scripts.
 
 All of the main files in are within the `~/.oftendeck` folder. Then the files are the symlinked to other system folders like `usr/local/bin` or `~/.emacs.d/init.el`. This makes it easier for myself to edit and provide updates via github, and for you to install easily onto your device.
 
@@ -14,6 +14,7 @@ git pull
 # Installation
 
 For installation, the steps are simple.
+0. Change Vial to your keyboard.
 1. Install Raspberry Pi OS Lite with correct screen configurations.
 2. Connect to WiFi via `raspi-config`
 3. Download and run General Install Script
@@ -21,6 +22,15 @@ For installation, the steps are simple.
 5. Install Emacs plugins
 
 And then you are ready to enjoy the OftenDeck!
+
+# Step 0: Keyboard Config
+
+This is optional, but the OftenDeck uses two dials like an etch-a-sketch to navigate the cursor up, down, left, and right. The buttons on the dials toggle the Navigation Sidebar, Heading Sidebar, switching buffers, and switching split-screens. The left knob button should be assigned to <f5> and the right knob should be assigned to <f6>.
+
+The picture below shows what my Vial configuration looks like as reference.
+
+![First Layer](./OftenDeck-Vial-1.png)
+![Second Layer](./OftenDeck-Vial-2.png)
 
 # Step 1: Flashing RasPi OS Lite
 
