@@ -82,8 +82,8 @@ Looking at the General Install Script, it should work for all Debian devices... 
 
 What the script does:
 - Speeds up Boot
-   - Removes Raspberry Pi OS rainbow boot image
-   - Removes btart-up scrolling boot text
+ - Removes Raspberry Pi OS rainbow boot image
+ - Removes btart-up scrolling boot text
 
 My current workhorse is a Raspberry Pi 4 with the official 7-inch touch screen. (I have the touch screen disabled.)
 
@@ -93,11 +93,11 @@ So far, no edits. So far everything works right out of the box. :)
 
 What the script does:
 - Speeds up Boot
-   - Removes Raspberry Pi OS rainbow boot image
-   - Removes btart-up scrolling boot text
+ - Removes Raspberry Pi OS rainbow boot image
+ - Removes btart-up scrolling boot text
 - Rotates programs that use the framebuffer
-   - Rotates fbterm
-   - Rotates custom `fbgs` called often-fimgs
+ - Rotates fbterm
+ - Rotates custom `fbgs` called often-fimgs
 
 There are some issues with the newer `vc4-kms-v3d` driver. I cannot turn it off because I cannot find the HDMI timings for the `config.txt`. 
 
