@@ -70,8 +70,6 @@ If it breaks for some reason, please let me know. You'll probably need to instal
 
 # Set 4. Run Specific Device Script
 
-## Introduction
-
 Currently, there are two scripts options for custom devices:
 1. The RasPi 4 with official 7-inch touch screen.
 2. Raspberry Pi Zero 2W with WiseCoco 7.84 inch. (The MicroJournal Rev.2.ReVamp)
@@ -79,6 +77,8 @@ Currently, there are two scripts options for custom devices:
 These are the two devices that I currently own.
 
 Looking at the General Install Script, it should work for all Debian devices... I just haven't tried it. 
+
+
 
 ## Script Option 1: RasPi 4 with Official 7-inch touch screen
 
