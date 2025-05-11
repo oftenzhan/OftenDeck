@@ -78,15 +78,26 @@ These are the two devices that I currently own.
 
 Looking at the General Install Script, it should work for all Debian devices... I just haven't tried it. 
 
-
-
 ## Script Option 1: RasPi 4 with Official 7-inch touch screen
+
+What the script does:
+- Speeds up Boot
+   - Removes Raspberry Pi OS rainbow boot image
+   - Removes btart-up scrolling boot text
 
 My current workhorse is a Raspberry Pi 4 with the official 7-inch touch screen. (I have the touch screen disabled.)
 
 So far, no edits. So far everything works right out of the box. :)
 
 ## RasPi Zero 2w with WiseCoco 7.84-inch Screen.
+
+What the script does:
+- Speeds up Boot
+   - Removes Raspberry Pi OS rainbow boot image
+   - Removes btart-up scrolling boot text
+- Rotates programs that use the framebuffer
+   - Rotates fbterm
+   - Rotates custom `fbgs` called often-fimgs
 
 There are some issues with the newer `vc4-kms-v3d` driver. I cannot turn it off because I cannot find the HDMI timings for the `config.txt`. 
 
@@ -102,34 +113,28 @@ Thus, I cannot use `display_rotate` which is used to rotate the framebuffer. So 
 
 In `fbterm`, I rotate it using `rotate=3` in the initrc.
 
-In `fbgs`, I had to rewrite the script to make ghostscript generate the PNG images rotated.
+In `often-fimgs` (a stripped down version of `fbgs` which uses `fim` instead of `fbi`), I had to rewrite the script to make ghostscript generate the PNG images rotated.
 
 If someone knows how to rotate the framebuffer on the WiseCoCo 7.84, it would save me a lot of heartache.
 
+# Todo
 
-# Included
+These are updates I plan to do whenever I have time. These are minor annoyances but not necessary for the overall function of the OftenDeck.
 
-```
-sudo apt install texlive-latex-recommended
-sudo apt install kbd
-```
+- OftenDeck Configurations
+   - Change startup to Journal.md file.
+   - fix FIM with different keybindings consistent with the rest of the OftenDeck
 
-- Change startup to Journal.md file.
-- Link my files to private repository.
-- fix FIM with different keybindings consistent with the rest of the OftenDeck
-- fix dials on mechanical keyboards (q15 max)
-- connect to GitHub to push personal documents to private repository.
-
-# Added
-
-emacs package: org-autolist
+- Documentation
+  - Directions to link my files to a private repository.
+  - Directions on setting up printer
+  - Directions on how to use this with Jekyll to make a blog.
 
 
 
 
 
-
-
+# Old Directions
 
 ```
 Personal comments: One of the annoyances of using a RasPi Zero 2w and the MicroJournal Rev.2.Revamp is...
