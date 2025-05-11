@@ -80,6 +80,10 @@ Looking at the General Install Script, it should work for all Debian devices... 
 
 ## Script Option 1: RasPi 4 with Official 7-inch touch screen
 
+```
+bash .oftendeck/scripts/oftendeck_Rev2Revamp.sh
+```
+
 What the script does:
 - Speeds up Boot
  - Removes Raspberry Pi OS rainbow boot image
