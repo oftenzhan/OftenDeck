@@ -80,8 +80,8 @@ Looking at the General Install Script, it should work for all Debian devices... 
 
 ## Script Option 1: RasPi 4 with Official 7-inch touch screen
 
-```
-bash .oftendeck/scripts/oftendeck_Rev2Revamp.sh
+```sh
+bash ~/.oftendeck/scripts/oftendeck_SmartiPi.sh
 ```
 
 What the script does:
@@ -94,6 +94,10 @@ My current workhorse is a Raspberry Pi 4 with the official 7-inch touch screen. 
 So far, no edits. So far everything works right out of the box. :)
 
 ## RasPi Zero 2w with WiseCoco 7.84-inch Screen.
+
+```sg
+bash ~/.oftendeck/scripts/oftendeck_Rev2Revamp.sh
+```
 
 What the script does:
 - Speeds up Boot
