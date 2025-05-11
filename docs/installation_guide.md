@@ -86,8 +86,8 @@ bash ~/.oftendeck/scripts/oftendeck_SmartiPi.sh
 
 What the script does:
 - Speeds up Boot
- - Removes Raspberry Pi OS rainbow boot image
- - Removes btart-up scrolling boot text
+  - Removes Raspberry Pi OS rainbow boot image
+  - Removes btart-up scrolling boot text
 
 My current workhorse is a Raspberry Pi 4 with the official 7-inch touch screen. (I have the touch screen disabled.)
 
