@@ -27,11 +27,6 @@ And then you are ready to enjoy the OftenDeck!
 
 This is optional, but the OftenDeck uses two dials like an etch-a-sketch to navigate the cursor up, down, left, and right. The buttons on the dials toggle the Navigation Sidebar, Heading Sidebar, switching buffers, and switching split-screens. The left knob button should be assigned to <f5> and the right knob should be assigned to <f6>.
 
-The picture below shows what my Vial configuration looks like as reference.
-
-![First Layer](./OftenDeck-Vial-1.png)
-![Second Layer](./OftenDeck-Vial-2.png)
-
 # Step 1: Flashing RasPi OS Lite
 
 ## Flashing the SD Card
