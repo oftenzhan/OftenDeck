@@ -161,7 +161,6 @@
   (make-directory "~/documents/journal/" t))
 
 (use-package org-journal
-  :ensure t
   :custom
   (org-journal-dir "~/documents/journal/")                    ;; Journal directory
   (org-journal-file-type 'yearly)                       ;; Use one file per year
