@@ -152,7 +152,14 @@
           (lambda ()
             (local-set-key (kbd "RET") #'my/markdown-smart-ret)))
 
+;;; ---
 ;;; Org-Journal configuration
+;;; ---
+
+;; Ensure the journal directory exists
+(unless (file-exists-p "~/documents/journal/")
+  (make-directory "~/documents/journal/" t))
+
 (use-package org-journal
   :ensure t
   :custom
