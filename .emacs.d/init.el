@@ -156,7 +156,7 @@
 (use-package org-journal
   :ensure t
   :custom
-  (org-journal-dir "~/org/journal/")                    ;; Journal directory
+  (org-journal-dir "~/documents/journal/")                    ;; Journal directory
   (org-journal-file-type 'yearly)                       ;; Use one file per year
   (org-journal-file-format "%Y.org")                    ;; File naming: 2025.org
   (org-journal-date-format "%Y-%m-%d, %A")              ;; Entry heading: 2025-05-11, Sunday
