@@ -30,7 +30,7 @@ done
 # Prompt user if -n flag was not given
 if [ "$no_share" = false ]; then
   echo
-  echo "This script can remove specific sensitive data—specifically Wi-Fi settings, SSH keys, and terminal history) to make the image safer to share to others. If you press Enter without typing 'y', it will default to NO and keep everything as-is."
+  echo "This script can remove specific sensitive data (specifically Wi-Fi settings, SSH keys, and terminal history) to make the image safer to share to others. If you press Enter without typing 'y', it will default to NO and keep everything as-is."
   read -p "Will this image be shared with others? [y/N]: " share
   echo
   share=${share,,}  # convert to lowercase
