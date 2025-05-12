@@ -166,8 +166,8 @@
   (org-journal-file-type 'yearly)                       ;; Use one file per year
   (org-journal-file-format "%Y.org")                    ;; File naming: 2025.org
   (org-journal-date-format "%Y-%m-%d, %A")              ;; Entry heading: 2025-05-11, Sunday
-  (org-journal-time-format "")                          ;; No time under date
-  (org-journal-new-entry-append t)                      ;; New entries at bottom
+  (org-journal-time-format "%I:%M %p")                 ;; 12-hour time with AM/PM
+  (org-journal-new-entry-append nil)                      ;; New entries at top. If at bottom, replace nil with t
   (org-journal-enable-encryption nil)                   ;; No encryption
   (org-journal-carryover-items "")                      ;; Don’t carry over unfinished TODOs
 )
