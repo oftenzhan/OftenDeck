@@ -2,7 +2,7 @@
 
 echo "=== Modify fim rotation ==="
 
-sed -i "s/g:_orientation=.*/g:_orientation=3/" "$HOME/.oftendeck/scripts/fimgs.sh"
+sed -i "s/g:_orientation=.*/g:_orientation=3/" "$HOME/.oftendeck/scripts/bin/often-fimgs.sh"
 
 echo "=== Modify fbterm rotation ==="
 
